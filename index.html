@@ -431,7 +431,7 @@
 
 <script src="script.js"></script>
 </body>
-  <!-- ================= AI DOUBT SOLVER CHATBOT START ================= -->
+<!-- ================= AI DOUBT SOLVER CHATBOT START (FIXED) ================= -->
 <!-- Chat Floating Button -->
 <div id="ai-chat-bubble" onclick="toggleChatWindow()" style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, #007bff, #0056b3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; cursor: pointer; box-shadow: 0 4px 15px rgba(0,123,255,0.4); z-index: 10000; transition: transform 0.3s;">
     🤖
@@ -450,8 +450,8 @@
     <div id="chatLogsArea" style="flex: 1; padding: 15px; overflow-y: auto; background: #f8f9fa; font-size: 14px; display: flex; flex-direction: column; gap: 10px;">
         <!-- Initial Bot Welcome Prompt -->
         <div style="background: #e1f5fe; color: #0288d1; padding: 10px; border-radius: 8px; max-width: 85%; align-self: flex-start; line-height: 1.4;">
-            Hello Student! 👋 Main Sun Shine AI Assistant hoon. Aapko padhai me kya doubt hai? Niche likhiye ya puchein! 
-            <br><small style="color: #555; display:block; margin-top:5px;">👉 Try typing: "Science notes", "Time table", "Maths doubt"</small>
+            Hello Student! 👋 Main Sun Shine AI Assistant hoon. Padhai me koi doubt hai? Niche likhiye! 
+            <br><small style="color: #555; display:block; margin-top:5px;">👉 Type karein: "Science", "Maths", "Homework"</small>
         </div>
     </div>
 
@@ -463,27 +463,24 @@
 </div>
 
 <script>
-    // 1. Toggle Windows View Port Open / Close Function
+    // 1. Open or Close Chat Box
     function toggleChatWindow() {
         const chatWin = document.getElementById('ai-chat-window');
-        const chatBubble = document.getElementById('ai-chat-bubble');
         if (chatWin.style.display === 'none' || chatWin.style.display === '') {
             chatWin.style.display = 'flex';
-            chatBubble.style.transform = 'scale(0.9) rotate(90deg)';
         } else {
             chatWin.style.display = 'none';
-            chatBubble.style.transform = 'scale(1) rotate(0deg)';
         }
     }
 
-    // 2. Handle Enter Key Press Processing
+    // 2. Trigger on Enter Key Press
     function handleChatEnter(event) {
         if (event.key === 'Enter') {
             processStudentQuery();
         }
     }
 
-    // 3. Process Prompt Context Logic and Dynamic Content Appends
+    // 3. Main Reply Processing Logic
     function processStudentQuery() {
         const inputField = document.getElementById('studentInputField');
         const userText = inputField.value.trim();
@@ -491,22 +488,26 @@
 
         const chatLogs = document.getElementById('chatLogsArea');
 
-        // Append User Message Logs
+        // Create User Message Bubble
         const userMsgDiv = document.createElement('div');
-        userMsgDiv.style = "background: #007bff; color: white; padding: 10px; border-radius: 8px; max-width: 85%; align-self: flex-end; line-height: 1.4;";
+        userMsgDiv.style.background = "#007bff";
+        userMsgDiv.style.color = "white";
+        userMsgDiv.style.padding = "10px";
+        userMsgDiv.style.borderRadius = "8px";
+        userMsgDiv.style.maxWidth = "85%";
+        userMsgDiv.style.alignSelf = "flex-end";
+        userMsgDiv.style.lineHeight = "1.4";
         userMsgDiv.innerText = userText;
         chatLogs.appendChild(userMsgDiv);
 
-        // Clear input early for focus management
         inputField.value = "";
         chatLogs.scrollTop = chatLogs.scrollHeight;
 
-        // Trigger Typing State Prompt
-        setTimeout(() => {
-            let botReplyText = "Muje afsos hai, mai is sawal ka jawab abhi khoj raha hu. Aap ye doubt Ravindra sir se direct center par pooch sakte hain! 👍";
+        // Bot Answer Generating Logic
+        setTimeout(function() {
+            let botReplyText = "Muje afsos hai, mai is sawal ka jawab abhi khoj raha hu. Aap ye doubt direct coaching par Ravindra sir se pooch sakte hain! 👍";
             const lowerText = userText.toLowerCase();
 
-            // Custom Rule Engine for Instant Responses
             if (lowerText.includes('science') || lowerText.includes('vigyan') || lowerText.includes('notes')) {
                 botReplyText = "🔬 Science lectures aur notes ke liye hamari website par 'Science Lectures' section check karein, jahan Google Drive portals linked hain!";
             } else if (lowerText.includes('math') || lowerText.includes('ganit') || lowerText.includes('table')) {
@@ -519,15 +520,23 @@
                 botReplyText = "👨‍🏫 Ravindra Yadav sir Sun Shine Coaching Academy ke senior director hain aur unka experience 5+ saal se zyada ka hai.";
             }
 
-            // Append AI Response Logs
+            // Create Bot Reply Bubble
             const botMsgDiv = document.createElement('div');
-            botMsgDiv.style = "background: #e1f5fe; color: #0288d1; padding: 10px; border-radius: 8px; max-width: 85%; align-self: flex-start; line-height: 1.4;";
+            botMsgDiv.style.background = "#e1f5fe";
+            botMsgDiv.style.color = "#0288d1";
+            botMsgDiv.style.padding = "10px";
+            botMsgDiv.style.borderRadius = "8px";
+            botMsgDiv.style.maxWidth = "85%";
+            botMsgDiv.style.alignSelf = "flex-start";
+            botMsgDiv.style.lineHeight = "1.4";
             botMsgDiv.innerText = botReplyText;
+            
             chatLogs.appendChild(botMsgDiv);
             chatLogs.scrollTop = chatLogs.scrollHeight;
         }, 600);
     }
 </script>
 <!-- ================= AI DOUBT SOLVER CHATBOT END ================= -->
+
 
 </html>
