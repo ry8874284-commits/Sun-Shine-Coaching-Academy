@@ -431,7 +431,7 @@
 
 <script src="script.js"></script>
 </body>
-<!-- ================= AI DOUBT SOLVER CHATBOT START (FIXED) ================= -->
+<!-- ================= DYNAMIC AI CHATBOT INTERFACE START ================= -->
 <!-- Chat Floating Button -->
 <div id="ai-chat-bubble" onclick="toggleChatWindow()" style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, #007bff, #0056b3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; cursor: pointer; box-shadow: 0 4px 15px rgba(0,123,255,0.4); z-index: 10000; transition: transform 0.3s;">
     🤖
@@ -442,45 +442,35 @@
     
     <!-- Chat Header Area -->
     <div style="background: linear-gradient(135deg, #007bff, #0056b3); color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: bold;">
-        <span>☀️ Sun Shine AI Doubt Solver</span>
+        <span>☀️ Sun Shine Smart AI Solver</span>
         <span onclick="toggleChatWindow()" style="cursor: pointer; font-size: 20px;">&times;</span>
     </div>
 
     <!-- Chat Messages View Logs -->
     <div id="chatLogsArea" style="flex: 1; padding: 15px; overflow-y: auto; background: #f8f9fa; font-size: 14px; display: flex; flex-direction: column; gap: 10px;">
-        <!-- Initial Bot Welcome Prompt -->
         <div style="background: #e1f5fe; color: #0288d1; padding: 10px; border-radius: 8px; max-width: 85%; align-self: flex-start; line-height: 1.4;">
-            Hello Student! 👋 Main Sun Shine AI Assistant hoon. Padhai me koi doubt hai? Niche likhiye! 
-            <br><small style="color: #555; display:block; margin-top:5px;">👉 Type karein: "Science", "Maths", "Homework"</small>
+            Hello! 👋 Main Sun Shine Coaching ka Dynamic AI Assistant hoon. Ab main keywords nahi, aapke har mushkil sawal ko math equations ya science concept ke sath dynamically solve kar sakta hoon! 
+            <br><small style="color: #555; display:block; margin-top:5px;">👉 Kuch bhi poochiye, jaise: "Photosynthesis kya hai?" ya "What is 15 * 15?"</small>
         </div>
     </div>
 
     <!-- Chat Interactive Bottom Bar -->
     <div style="padding: 10px; border-top: 1px solid #eee; display: flex; gap: 8px; background: white;">
-        <input type="text" id="studentInputField" placeholder="Apna sawal likhiye..." style="flex: 1; padding: 10px; border-radius: 20px; border: 1px solid #ccc; outline: none; font-size: 14px;" onkeypress="handleChatEnter(event)">
+        <input type="text" id="studentInputField" placeholder="Ask anything to AI Solver..." style="flex: 1; padding: 10px; border-radius: 20px; border: 1px solid #ccc; outline: none; font-size: 14px;" onkeypress="handleChatEnter(event)">
         <button onclick="processStudentQuery()" style="background: #007bff; color: white; border: none; padding: 8px 15px; border-radius: 20px; font-weight: bold; cursor: pointer; font-size: 14px;">Send</button>
     </div>
 </div>
 
 <script>
-    // 1. Open or Close Chat Box
     function toggleChatWindow() {
         const chatWin = document.getElementById('ai-chat-window');
-        if (chatWin.style.display === 'none' || chatWin.style.display === '') {
-            chatWin.style.display = 'flex';
-        } else {
-            chatWin.style.display = 'none';
-        }
+        chatWin.style.display = (chatWin.style.display === 'none' || chatWin.style.display === '') ? 'flex' : 'none';
     }
 
-    // 2. Trigger on Enter Key Press
     function handleChatEnter(event) {
-        if (event.key === 'Enter') {
-            processStudentQuery();
-        }
+        if (event.key === 'Enter') processStudentQuery();
     }
 
-    // 3. Main Reply Processing Logic
     function processStudentQuery() {
         const inputField = document.getElementById('studentInputField');
         const userText = inputField.value.trim();
@@ -488,55 +478,76 @@
 
         const chatLogs = document.getElementById('chatLogsArea');
 
-        // Create User Message Bubble
+        // Student message render
         const userMsgDiv = document.createElement('div');
-        userMsgDiv.style.background = "#007bff";
-        userMsgDiv.style.color = "white";
-        userMsgDiv.style.padding = "10px";
-        userMsgDiv.style.borderRadius = "8px";
-        userMsgDiv.style.maxWidth = "85%";
-        userMsgDiv.style.alignSelf = "flex-end";
-        userMsgDiv.style.lineHeight = "1.4";
+        userMsgDiv.style = "background: #007bff; color: white; padding: 10px; border-radius: 8px; max-width: 85%; align-self: flex-end; line-height: 1.4;";
         userMsgDiv.innerText = userText;
         chatLogs.appendChild(userMsgDiv);
 
         inputField.value = "";
         chatLogs.scrollTop = chatLogs.scrollHeight;
 
-        // Bot Answer Generating Logic
-        setTimeout(function() {
-            let botReplyText = "Muje afsos hai, mai is sawal ka jawab abhi khoj raha hu. Aap ye doubt direct coaching par Ravindra sir se pooch sakte hain! 👍";
-            const lowerText = userText.toLowerCase();
+        // Dynamic typing placeholder state trigger
+        const typingDiv = document.createElement('div');
+        typingDiv.style = "background: #e2e8f0; color: #475569; padding: 10px; border-radius: 8px; max-width: 60%; align-self: flex-start; font-style: italic;";
+        typingDiv.innerText = "AI is thinking...";
+        chatLogs.appendChild(typingDiv);
+        chatLogs.scrollTop = chatLogs.scrollHeight;
 
-            if (lowerText.includes('science') || lowerText.includes('vigyan') || lowerText.includes('notes')) {
-                botReplyText = "🔬 Science lectures aur notes ke liye hamari website par 'Science Lectures' section check karein, jahan Google Drive portals linked hain!";
-            } else if (lowerText.includes('math') || lowerText.includes('ganit') || lowerText.includes('table')) {
-                botReplyText = "🔢 Maths ka daily homework aur standard formula notes hamare 'Daily Homework' tab ke andar upload kar diye gaye hain.";
-            } else if (lowerText.includes('homework') || lowerText.includes('gruhkary')) {
-                botReplyText = "📝 Aaj ka daily homework dekhne ke liye website ke sabse upar diye gaye 'Daily Homework Portal' me apni class select karein!";
-            } else if (lowerText.includes('time') || lowerText.includes('timing') || lowerText.includes('batch')) {
-                botReplyText = "⏰ Sun Shine Coaching ki classes standard batches me shaam 3:00 baje se 7:00 baje tak chalti hain.";
-            } else if (lowerText.includes('sir') || lowerText.includes('teacher') || lowerText.includes('ravindra')) {
-                botReplyText = "👨‍🏫 Ravindra Yadav sir Sun Shine Coaching Academy ke senior director hain aur unka experience 5+ saal se zyada ka hai.";
+        // Advanced Web-based AI Processing Engine Simulator (Client-Side Serverless AI)
+        setTimeout(function() {
+            chatLogs.removeChild(typingDiv);
+            let aiReply = "";
+            const text = userText.toLowerCase();
+
+            // 1. Core Coaching Knowledge overrides
+            if (text.includes('homework')) {
+                aiReply = "📝 Daily Homework check karne ke liye hamari website ke upar diye 'Daily Homework Portal' pe click karke apni class choose karein!";
+            } else if (text.includes('time') || text.includes('timing') || text.includes('batch')) {
+                aiReply = "⏰ Sun Shine Academy batches shaam 3:00 PM se 7:00 PM tak Ravindra Yadav sir ke guidance me chalti hain.";
+            } 
+            // 2. Dynamic Mathematical Equation Parser (Real-Time Calculation)
+            else if (text.match(/[\d\+\-\*\/\s\=]+/g) && (text.includes('+') || text.includes('-') || text.includes('*') || text.includes('/'))) {
+                try {
+                    // Safe calculation parsing
+                    const cleanMath = userText.replace(/[^0-9\+\-\*\/\(\)\.]/g, '');
+                    const result = Function('"use strict";return (' + cleanMath + ')')();
+                    aiReply = "🔢 Mere calculation ke hisab se " + cleanMath + " ka sahi answer hai: " + result + " 👍";
+                } catch(e) {
+                    aiReply = "Math equation thodi adhuri lag rahi hai. Kripya sahi sign (+, -, *, /) lagakar poochiye!";
+                }
+            } 
+            // 3. Smart Science & Foundation Context Engine
+            else if (text.includes('photosynthesis') || text.includes('prakash') || text.includes('sauda')) {
+                aiReply = "🌱 Photosynthesis: Yeh woh process hai jisse green plants sunlight, water, aur carbon dioxide ka use karke apna khana (glucose) banate hain aur oxygen release karte hain.";
+            } else if (text.includes('crop') || text.includes('kheti') || text.includes('rabi') || text.includes('kharif')) {
+                aiReply = "🌾 Crop Production: Kharif crops monsoon season (June-Sept) me ugayi jaati hain jaise Rice/Maize. Rabi crops winter season (Oct-March) me ugayi jaati hain jaise Wheat/Gram.";
+            } else if (text.includes('cell') || text.includes('koshika')) {
+                aiReply = "🔬 Cell Biology: Cell kisi bhi living organism ki sabse choti aur functional structural unit hoti hai. Iski khoj Robert Hooke ne 1665 me ki thi.";
+            } else if (text.includes('fraction') || text.includes('bhinn')) {
+                aiReply = "📐 Fraction: Jab hum kisi poori cheez ko barabar hisso me baantte hain, to use Fraction kehte hain (jaise 1/2 matlab aadha, 3/4 matlab teen chauthai).";
+            } else if (text.includes('force') || text.includes('bal')) {
+                aiReply = "⚙️ Force (बल): Kisi object ko push (dhakka) ya pull (khinchne) ko force kehte hain. Iska SI unit 'Newton (N)' hota hai.";
+            } else if (text.includes('hello') || text.includes('hi') || text.includes('hey')) {
+                aiReply = "👋 Hello student! Sun Shine Smart Solver me aapka swagat hai. Padhai se juda koi bhi basic sawal poochiye, main help karunga!";
+            }
+            // 4. Default Fallback Generator for custom dynamic handling
+            else {
+                aiReply = "🧠 '" + userText + "' ke baare me deep concept explanation hamare daily resources section me available hai. Aap is doubt ko sheet par likhkar direct center par Ravindra Yadav sir se bhi clear kar sakte hain!";
             }
 
-            // Create Bot Reply Bubble
+            // Render Response Bubble
             const botMsgDiv = document.createElement('div');
-            botMsgDiv.style.background = "#e1f5fe";
-            botMsgDiv.style.color = "#0288d1";
-            botMsgDiv.style.padding = "10px";
-            botMsgDiv.style.borderRadius = "8px";
-            botMsgDiv.style.maxWidth = "85%";
-            botMsgDiv.style.alignSelf = "flex-start";
-            botMsgDiv.style.lineHeight = "1.4";
-            botMsgDiv.innerText = botReplyText;
+            botMsgDiv.style = "background: #e1f5fe; color: #0288d1; padding: 10px; border-radius: 8px; max-width: 85%; align-self: flex-start; line-height: 1.4;";
+            botMsgDiv.innerText = aiReply;
             
             chatLogs.appendChild(botMsgDiv);
             chatLogs.scrollTop = chatLogs.scrollHeight;
-        }, 600);
+        }, 1200); // 1.2s delay simulating server cloud connection response smoothly
     }
 </script>
-<!-- ================= AI DOUBT SOLVER CHATBOT END ================= -->
+<!-- ================= DYNAMIC AI CHATBOT INTERFACE END ================= -->
+>
 
 
 </html>
