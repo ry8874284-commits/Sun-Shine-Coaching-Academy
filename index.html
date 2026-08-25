@@ -45,6 +45,97 @@
     </div>
   </div>
   <!-- ================= DIGITAL LIBRARY SECTION START ================= -->
+  <!-- ================= DAILY HOMEWORK SECTION START ================= -->
+<section id="daily-homework-portal" style="font-family: Arial, sans-serif; padding: 40px 20px; max-width: 1200px; margin: 40px auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border: 1px solid #e0e0e0;">
+    
+    <div style="text-align: center; margin-bottom: 25px;">
+        <h2 style="color: #0056b3; font-size: 28px; margin-bottom: 5px;">📝 Daily Homework Corner</h2>
+        <p id="currentHwDate" style="color: #555; font-weight: bold; font-size: 15px;">📅 Loading Today's Date...</p>
+    </div>
+
+    <!-- Class Selection Tab Buttons -->
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 25px;">
+        <button onclick="changeHw('junior', this)" style="background: #ff5252; color: white; border: none; padding: 10px 18px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer;" class="hw-tab-btn">Class 1 & 2</button>
+        <button onclick="changeHw('primary', this)" style="background: #e2e8f0; color: #333; border: none; padding: 10px 18px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer;" class="hw-tab-btn">Class 3 to 5</button>
+        <button onclick="changeHw('middle', this)" style="background: #e2e8f0; color: #333; border: none; padding: 10px 18px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer;" class="hw-tab-btn">Class 6 & 7</button>
+        <button onclick="changeHw('board', this)" style="background: #e2e8f0; color: #333; border: none; padding: 10px 18px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer;" class="hw-tab-btn">Class 8</button>
+    </div>
+
+    <!-- Homework Display Content -->
+    <div id="hwDisplayBox" style="background: #f8f9fa; border-left: 5px solid #ff5252; padding: 20px; border-radius: 8px; border-top: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;">
+        <h3 style="color: #333; margin-bottom: 10px;">🧸 Class 1 & 2 Homework</h3>
+        <ul style="padding-left: 20px; line-height: 1.8; color: #444;">
+            <li><strong>Maths:</strong> Write and learn tables from 2 to 10.</li>
+            <li><strong>English:</strong> Read Chapter 2 and write 10 hard words.</li>
+            <li><strong>Hindi:</strong> अपनी कॉपी में 1 पेज सुलेख (Handwriting) साफ-साफ लिखें।</li>
+        </ul>
+    </div>
+</section>
+
+<script>
+    // 1. Automatically Show Today's Indian Date Format
+    document.addEventListener("DOMContentLoaded", function() {
+        const today = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('currentHwDate').innerText = "📅 Aaj ka Homework: " + today.toLocaleDateString('hi-IN', options);
+    });
+
+    // 2. Dynamic Tab Changing Functionality
+    function changeHw(classGroup, clickedBtn) {
+        // Reset all buttons background
+        const buttons = document.querySelectorAll('.hw-tab-btn');
+        buttons.forEach(btn => {
+            btn.style.background = '#e2e8f0';
+            btn.style.color = '#333';
+        });
+
+        // Highlight active button color based on standard accent
+        clickedBtn.style.background = '#ff5252';
+        clickedBtn.style.color = 'white';
+
+        const displayBox = document.getElementById('hwDisplayBox');
+
+        if (classGroup === 'junior') {
+            displayBox.style.borderLeftColor = '#ff5252';
+            displayBox.innerHTML = `
+                <h3 style="color: #333; margin-bottom: 10px;">🧸 Class 1 & 2 Homework</h3>
+                <ul style="padding-left: 20px; line-height: 1.8; color: #444;">
+                    <li><strong>Maths:</strong> Write and learn tables from 2 to 10.</li>
+                    <li><strong>English:</strong> Read Chapter 2 and write 10 hard words.</li>
+                    <li><strong>Hindi:</strong> अपनी कॉपी में 1 पेज सुलेख (Handwriting) साफ-साफ लिखें।</li>
+                </ul>`;
+        } else if (classGroup === 'primary') {
+            displayBox.style.borderLeftColor = '#0056b3';
+            displayBox.innerHTML = `
+                <h3 style="color: #333; margin-bottom: 10px;">🌱 Class 3 to 5 Homework</h3>
+                <ul style="padding-left: 20px; line-height: 1.8; color: #444;">
+                    <li><strong>Maths:</strong> Solve Chapter 3 Revision Exercise.</li>
+                    <li><strong>Science:</strong> Read Ch 1 (Plants) and learn definition of Photosynthesis.</li>
+                    <li><strong>English:</strong> Write 5 lines about your school.</li>
+                </ul>`;
+        } else if (classGroup === 'middle') {
+            displayBox.style.borderLeftColor = '#a29bfe';
+            displayBox.innerHTML = `
+                <h3 style="color: #333; margin-bottom: 10px;">🧬 Class 6 & 7 Homework</h3>
+                <ul style="padding-left: 20px; line-height: 1.8; color: #444;">
+                    <li><strong>Mathematics:</strong> Complete Exercise 2.1 (Questions 5 to 10).</li>
+                    <li><strong>Science:</strong> Learn Question & Answers of Chapter 2.</li>
+                    <li><strong>SST:</strong> Locate main rivers of India on a physical map.</li>
+                </ul>`;
+        } else if (classGroup === 'board') {
+            displayBox.style.borderLeftColor = '#28a745';
+            displayBox.innerHTML = `
+                <h3 style="color: #333; margin-bottom: 10px;">🚀 Class 8 (Board Prep) Homework</h3>
+                <ul style="padding-left: 20px; line-height: 1.8; color: #444;">
+                    <li><strong>Science:</strong> Write and memorize the complete cycle of Nitrogen fixation.</li>
+                    <li><strong>Maths:</strong> Solve Rational Numbers Exercise 1.2 in your homework register.</li>
+                    <li><strong>English:</strong> Write an application for 2 days sick leave to the principal.</li>
+                </ul>`;
+        }
+    }
+</script>
+<!-- ================= DAILY HOMEWORK SECTION END ================= -->
+
 <section id="coaching-library" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 50px 20px; max-width: 1200px; margin: auto; background-color: #f4f7f6; border-radius: 16px; margin-top: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
     
     <div style="text-align: center; margin-bottom: 40px;">
