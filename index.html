@@ -247,6 +247,103 @@
     </div>
 
 </section>
+  <!-- ================================================================= -->
+<!-- 🌟 SUN SHINE NEW INTEGRATED FEATURES PACKAGE (WHATSAPP VER) 🌟 -->
+<!-- ================================================================= -->
+
+<!-- 1️⃣ FEATURE: SCROLLING NOTICE BOARD (Marquee News) -->
+<div style="background: #ff5252; color: white; font-weight: bold; padding: 10px; font-family: Arial, sans-serif; font-size: 14px; margin-bottom: 20px; border-radius: 6px;">
+    <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+        ✨ New Admissions & Entrance Test Open for Session 2026-27! Register via the form below. 📝 | 🧪 Special Science Revision Test will be held this Sunday at 9:00 AM! | 📚 Class 1 to 8 Free digital textbooks link have been updated in the library section.
+    </marquee>
+</div>
+
+<!-- 2️⃣ FEATURE: MIND SHARP PRACTICE QUIZ -->
+<section id="practice-quiz" style="font-family: Arial, sans-serif; padding: 30px 20px; max-width: 1200px; margin: 30px auto; background: white; border: 1px solid #e0e0e0; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    <h3 style="color: #0056b3; margin-bottom: 15px; text-align: center; font-size: 22px;">🧠 Mind Sharp Practice Quiz</h3>
+    <p style="font-weight: bold; font-size: 16px; margin-bottom: 15px; text-align: center;">Q. Plant cells me khana banane wale process ko kya kehte hain?</p>
+    <div style="display: flex; flex-direction: column; gap: 10px; max-width: 500px; margin: auto;">
+        <button onclick="alert('❌ Galat Jawab! Ek baar fir koshish karein.')" style="padding: 12px; text-align: left; background: #f8f9fa; border: 1px solid #ccc; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px;">A) Respiration (श्वसन)</button>
+        <button onclick="alert('🎉 Shabaash! Bilkul Sahi Jawab. 👍')" style="padding: 12px; text-align: left; background: #f8f9fa; border: 1px solid #ccc; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px;">B) Photosynthesis (प्रकाश-संश्लेषण)</button>
+    </div>
+</section>
+
+<!-- 3️⃣ FEATURE: ONLINE ADMISSION INQUIRY FORM (WHATSAPP DRIVEN) -->
+<section id="admission-form" style="font-family: Arial, sans-serif; padding: 30px 20px; max-width: 1200px; margin: 30px auto; background: white; border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    <h2 style="color: #0056b3; text-align: center; margin-bottom: 5px; font-size: 24px;">📝 Online Admission Inquiry</h2>
+    <p style="text-align: center; color: #666; font-size: 14px; margin-bottom: 20px;">Form bhariye, ye details direct Ravindra Yadav Sir ke WhatsApp par send ho jayengi!</p>
+    
+    <form onsubmit="sendInquiryToWhatsApp(event)">
+        <div style="margin-bottom: 15px;">
+            <label style="display:block; font-weight:bold; margin-bottom:5px; font-size: 14px;">Student Name:</label>
+            <input type="text" id="waStudentName" required placeholder="Enter student full name" style="width:100%; padding:11px; border:1px solid #ccc; border-radius:6px; font-family: Arial;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label style="display:block; font-weight:bold; margin-bottom:5px; font-size: 14px;">Target Class (1 to 8):</label>
+            <input type="text" id="waStudentClass" required placeholder="e.g. Class 6, Class 8" style="width:100%; padding:11px; border:1px solid #ccc; border-radius:6px; font-family: Arial;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label style="display:block; font-weight:bold; margin-bottom:5px; font-size: 14px;">Parent / Contact Phone Number:</label>
+            <input type="tel" id="waParentPhone" required placeholder="Enter 10 digit contact number" style="width:100%; padding:11px; border:1px solid #ccc; border-radius:6px; font-family: Arial;">
+        </div>
+        <button type="submit" style="width:100%; padding:13px; background: #25D366; color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            💬 Send Inquiry on WhatsApp
+        </button>
+    </form>
+</section>
+
+<!-- 4️⃣ FEATURE: SHINING TOPPERS GALLERY -->
+<section id="toppers-gallery" style="font-family: Arial, sans-serif; padding: 30px 20px; max-width: 1200px; margin: 30px auto; text-align: center;">
+    <h2 style="color: #0056b3; margin-bottom: 20px; font-size: 24px;">🏆 Our Shining Toppers</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <div style="background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; width: 260px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <div style="font-size: 40px;">🥇</div>
+            <h4 style="margin: 10px 0 5px 0; font-size: 16px;">Amit Sharma</h4>
+            <p style="color: #28a745; font-weight: bold; font-size: 14px;">96.4% Marks (Class 8)</p>
+        </div>
+        <div style="background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; width: 260px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <div style="font-size: 40px;">🥈</div>
+            <h4 style="margin: 10px 0 5px 0; font-size: 16px;">Priya Yadav</h4>
+            <p style="color: #28a745; font-weight: bold; font-size: 14px;">95.2% Marks (Class 7)</p>
+        </div>
+    </div>
+</section>
+
+<!-- JAVASCRIPT ENGINE FOR WHATSAPP REDIRECTION -->
+<script>
+    function sendInquiryToWhatsApp(event) {
+        event.preventDefault();
+        
+        // 🚨 CONFIGURATION: Yahan apna 10-digit phone number dalna hai country code (91) ke sath
+        const myWhatsAppNumber = "919900000000"; // 👈 Abhi dummy hai, aap apna asli number isme daal lena
+        
+        // Fetch values from fields
+        const name = document.getElementById('waStudentName').value;
+        const studentClass = document.getElementById('waStudentClass').value;
+        const phone = document.getElementById('waParentPhone').value;
+        
+        // Construct clear line-by-line structured text
+        const messageText = `☀️ *Sun Shine Coaching Academy Inquiry* ☀️%0A%0A` +
+                            `👤 *Student Name:* ${name}%0A` +
+                            `🎒 *Target Class:* ${studentClass}%0A` +
+                            `📞 *Parent Contact:* ${phone}%0A%0A` +
+                            `Ji mujhe admission ke baare me jankari chahiye.`;
+        
+        // Create official cross-platform API open link
+        const whatsappUrl = `https://whatsapp.com{myWhatsAppNumber}&text=${messageText}`;
+        
+        // Open link securely in new window tab context
+        window.open(whatsappUrl, '_blank');
+        
+        // Reset original form template fields cleanly
+        event.target.reset();
+    }
+</script>
+
+<!-- ================================================================= -->
+<!-- 🌟 SUN SHINE NEW INTEGRATED FEATURES PACKAGE (END) 🌟 -->
+<!-- ================================================================= -->
+
 <!-- ================= DIGITAL LIBRARY SECTION END ================= -->
 
       <!-- 👨‍🏫 TEACHER SECTION -->
