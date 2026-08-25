@@ -71,92 +71,105 @@
         </ul>
     </div>
 </section>
-
+<!-- ================= GOOGLE SHEET LIVE HOMEWORK ENGINE ================= -->
 <script>
-    // 1. Automatically Show Today's Indian Date Format
-    document.addEventListener("DOMContentLoaded", function() {
-        const today = new Date();
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById('currentHwDate').innerText = "📅 Aaj ka Homework: " + today.toLocaleDateString('hi-IN', options);
-    });
+    // 🚨 CONFIGURATION: Yahan apni Google Sheet ki ID aur API key daalni hogi
+    const sheetId = 'PASTE_YOUR_GOOGLE_SHEET_ID_HERE'; 
+    const apiKey = 'PASTE_YOUR_GOOGLE_API_KEY_HERE'; // Google Cloud Console se free banti hai
+    
+    let liveHomeworkData = {};
 
-    // 2. Dynamic Tab Changing Functionality
+    function toggleDarkMode() { document.body.classList.toggle('dark-mode'); }
+    function toggleChatWindow() {
+        const chatWin = document.getElementById('ai-chat-window');
+        chatWin.style.display = (chatWin.style.display === 'none' || chatWin.style.display === '') ? 'flex' : 'none';
+    }
+
+    // Auto Live Date Calendar Tracker
+    function updateHomeworkDate() {
+      const today = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById('currentHwDate').innerText = "📅 Aaj ka Homework: " + today.toLocaleDateString('hi-IN', options);
+    }
+
+    // Fetch Live Homework directly from your Google Sheet
+    async function fetchLiveHomework() {
+        try {
+            const url = `https://googleapis.com{sheetId}/values/A1:D2?key=${apiKey}`;
+            const response = await fetch(url);
+            const data = await response.json();
+            
+            if (data.values && data.values.length > 1) {
+                // Store Google sheet row 2 data dynamically
+                liveHomeworkData = {
+                    junior: data.values[1][0] || "No homework updated today.",
+                    primary: data.values[1][1] || "No homework updated today.",
+                    middle: data.values[1][2] || "No homework updated today.",
+                    board: data.values[1][3] || "No homework updated today."
+                };
+                // Load default display content safely
+                changeHw('junior', document.querySelector('.hw-tab-btn'));
+            }
+        } catch (error) {
+            console.log("Sheet connection error, loading backup text.");
+        }
+    }
+
+    // Interactive Tab Switcher connected to Google Sheet Data
     function changeHw(classGroup, clickedBtn) {
-        // Reset all buttons background
         const buttons = document.querySelectorAll('.hw-tab-btn');
-        buttons.forEach(btn => {
-            btn.style.background = '#e2e8f0';
-            btn.style.color = '#333';
-        });
-
-        // Highlight active button color based on standard accent
-        clickedBtn.style.background = '#ff5252';
-        clickedBtn.style.color = 'white';
-
+        buttons.forEach(btn => { btn.style.background = '#e2e8f0'; btn.style.color = '#333'; });
+        if(clickedBtn) {
+            clickedBtn.style.background = '#ff5252'; 
+            clickedBtn.style.color = 'white';
+        }
+        
         const displayBox = document.getElementById('hwDisplayBox');
 
         if (classGroup === 'junior') {
             displayBox.style.borderLeftColor = '#ff5252';
-            displayBox.innerHTML = `
-                <h3 style="color: #333; margin-bottom: 10px;">🧸 Class 1 & 2 Homework</h3>
-                <ul style="padding-left: 20px; line-height: 1.8; color: #444;">
-                    <li><strong>Maths:</strong> Write and learn tables from 2 to 10.</li>
-                    <li><strong>English:</strong> Read Chapter 2 and write 10 hard words.</li>
-                    <li><strong>Hindi:</strong> अपनी कॉपी में 1 पेज सुलेख (Handwriting) साफ-साफ लिखें।</li>
-                </ul>`;
-                  if (classGroup === 'junior') {
-            displayBox.style.borderLeftColor = '#ff5252';
-            displayBox.innerHTML = `
-                <h3 style="color: #333; margin-bottom: 10px;">🧸 Class 1 & 2 Homework</h3>
-                <ul style="padding-left: 20px; line-height: 1.8; color: #444;">
-                    <li><strong>English Grammar:</strong> Aaj padhaye gaye 'This' aur 'That' ke rules ko dhyan se padhein.</li>
-                    <li><strong>Practice Task:</strong> Apni copy mein 'This' se 5 sentences (jaise: This is a book) aur 'That' se 5 sentences (jaise: That is a tree) साफ-साफ सुलेख में लिखें।</li>
-                    <li><strong>Maths:</strong> Learn and write tables from 2 to 12 in your notebook.</li>
-                </ul>`;
-        }
-
+            displayBox.innerHTML = `<h3 style="color:#333; margin-bottom:10px;">🧸 Class 1 & 2 Homework</h3><p style="line-height:1.8; color:#444; white-space: pre-line;">${liveHomeworkData.junior || '• Maths: Tables from 2 to 10 learn karein.<br>• English: This and That task complete karein.'}</p>`;
         } else if (classGroup === 'primary') {
             displayBox.style.borderLeftColor = '#0056b3';
-            displayBox.innerHTML = `
-                <h3 style="color: #333; margin-bottom: 10px;">🌱 Class 3 to 5 Homework</h3>
-                <ul style="padding-left: 20px; line-height: 1.8; color: #444;">
-                    <li><strong>Maths:</strong> Solve Chapter 3 Revision Exercise.</li>
-                    <li><strong>Science:</strong> Read Ch 1 (Plants) and learn definition of Photosynthesis.</li>
-                    <li><strong>English:</strong> Write 5 lines about your school.</li>
-                </ul>`;
-                  if (classGroup === 'junior') {
-            displayBox.style.borderLeftColor = '#ff5252';
-            displayBox.innerHTML = `
-                <h3 style="color: #333; margin-bottom: 10px;">🧸 Class 1 & 2 Homework</h3>
-                <ul style="padding-left: 20px; line-height: 1.8; color: #444;">
-                    <li><strong>English Grammar:</strong> Aaj padhaye gaye 'This' aur 'That' ke rules ko dhyan se padhein.</li>
-                    <li><strong>Practice Task:</strong> Apni copy mein 'This' se 5 sentences (jaise: This is a book) aur 'That' se 5 sentences (jaise: That is a tree) साफ-साफ सुलेख में लिखें।</li>
-                    <li><strong>Maths:</strong> Learn and write tables from 2 to 12 in your notebook.</li>
-                </ul>`;
-        }
-
+            displayBox.innerHTML = `<h3 style="color:#333; margin-bottom:10px;">🌱 Class 3 to 5 Homework</h3><p style="line-height:1.8; color:#444; white-space: pre-line;">${liveHomeworkData.primary || '• Maths: Solve Exercise 3.2 sheet completely.'}</p>`;
         } else if (classGroup === 'middle') {
             displayBox.style.borderLeftColor = '#a29bfe';
-            displayBox.innerHTML = `
-                <h3 style="color: #333; margin-bottom: 10px;">🧬 Class 6 & 7 Homework</h3>
-                <ul style="padding-left: 20px; line-height: 1.8; color: #444;">
-                    <li><strong>Mathematics:</strong> Complete Exercise 2.1 (Questions 5 to 10).</li>
-                    <li><strong>Science:</strong> Learn Question & Answers of Chapter 2.</li>
-                    <li><strong>SST:</strong> Locate main rivers of India on a physical map.</li>
-                </ul>`;
+            displayBox.innerHTML = `<h3 style="color:#333; margin-bottom:10px;">🧬 Class 6 & 7 Homework</h3><p style="line-height:1.8; color:#444; white-space: pre-line;">${liveHomeworkData.middle || '• Science: Learn Question & Answers of Chapter 2.'}</p>`;
         } else if (classGroup === 'board') {
             displayBox.style.borderLeftColor = '#28a745';
-            displayBox.innerHTML = `
-                <h3 style="color: #333; margin-bottom: 10px;">🚀 Class 8 (Board Prep) Homework</h3>
-                <ul style="padding-left: 20px; line-height: 1.8; color: #444;">
-                    <li><strong>Science:</strong> Write and memorize the complete cycle of Nitrogen fixation.</li>
-                    <li><strong>Maths:</strong> Solve Rational Numbers Exercise 1.2 in your homework register.</li>
-                    <li><strong>English:</strong> Write an application for 2 days sick leave to the principal.</li>
-                </ul>`;
+            displayBox.innerHTML = `<h3 style="color:#333; margin-bottom:10px;">🚀 Class 8 (Board Prep) Homework</h3><p style="line-height:1.8; color:#444; white-space: pre-line;">${liveHomeworkData.board || '• Science: Write and memorize the complete cycle of Nitrogen fixation.'}</p>`;
         }
     }
+
+    // Remaining basic structures for AI chat functions
+    function handleChatEnter(event) { if (event.key === 'Enter') processStudentQuery(); }
+    function processStudentQuery() {
+        const inputField = document.getElementById('studentInputField');
+        const userText = inputField.value.trim();
+        if (userText === "") return;
+        const chatLogs = document.getElementById('chatLogsArea');
+        const userMsgDiv = document.createElement('div');
+        userMsgDiv.style = "background:#007bff; color:white; padding:10px; border-radius:8px; max-width:85%; align-self:flex-end;";
+        userMsgDiv.innerText = userText;
+        chatLogs.appendChild(userMsgDiv);
+        inputField.value = "";
+        setTimeout(function() {
+            let aiReply = "Muje afsos hai, mai is sawal ka jawab abhi khoj raha hu. Aap ye doubt direct center par Ravindra sir se pooch sakte hain! 👍";
+            if (userText.toLowerCase().includes('science')) aiReply = "🔬 Science lectures aur notes ke liye hamari website par 'Class Notes Archive' panel check karein!";
+            const botMsgDiv = document.createElement('div');
+            botMsgDiv.style = "background: #e1f5fe; color: #0288d1; padding: 10px; border-radius: 8px; max-width: 85%; align-self: flex-start;";
+            botMsgDiv.innerText = aiReply;
+            chatLogs.appendChild(botMsgDiv);
+            chatLogs.scrollTop = chatLogs.scrollHeight;
+        }, 800);
+    }
+
+    window.onload = function() { 
+        updateHomeworkDate(); 
+        fetchLiveHomework(); 
+    };
 </script>
-<!-- ================= DAILY HOMEWORK SECTION END ================= -->
+
   <!-- ================= DAILY CLASS NOTES SECTION START ================= -->
 <section id="daily-notes-portal" style="font-family: Arial, sans-serif; padding: 40px 20px; max-width: 1200px; margin: 40px auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border: 1px solid #e0e0e0;">
     
