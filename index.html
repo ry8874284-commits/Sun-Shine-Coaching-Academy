@@ -431,4 +431,103 @@
 
 <script src="script.js"></script>
 </body>
+  <!-- ================= AI DOUBT SOLVER CHATBOT START ================= -->
+<!-- Chat Floating Button -->
+<div id="ai-chat-bubble" onclick="toggleChatWindow()" style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, #007bff, #0056b3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; cursor: pointer; box-shadow: 0 4px 15px rgba(0,123,255,0.4); z-index: 10000; transition: transform 0.3s;">
+    🤖
+</div>
+
+<!-- Chat Window Layout Container -->
+<div id="ai-chat-window" style="position: fixed; bottom: 100px; right: 30px; width: 350px; height: 450px; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid #e0e0e0; display: none; flex-direction: column; overflow: hidden; z-index: 10000; font-family: Arial, sans-serif;">
+    
+    <!-- Chat Header Area -->
+    <div style="background: linear-gradient(135deg, #007bff, #0056b3); color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: bold;">
+        <span>☀️ Sun Shine AI Doubt Solver</span>
+        <span onclick="toggleChatWindow()" style="cursor: pointer; font-size: 20px;">&times;</span>
+    </div>
+
+    <!-- Chat Messages View Logs -->
+    <div id="chatLogsArea" style="flex: 1; padding: 15px; overflow-y: auto; background: #f8f9fa; font-size: 14px; display: flex; flex-direction: column; gap: 10px;">
+        <!-- Initial Bot Welcome Prompt -->
+        <div style="background: #e1f5fe; color: #0288d1; padding: 10px; border-radius: 8px; max-width: 85%; align-self: flex-start; line-height: 1.4;">
+            Hello Student! 👋 Main Sun Shine AI Assistant hoon. Aapko padhai me kya doubt hai? Niche likhiye ya puchein! 
+            <br><small style="color: #555; display:block; margin-top:5px;">👉 Try typing: "Science notes", "Time table", "Maths doubt"</small>
+        </div>
+    </div>
+
+    <!-- Chat Interactive Bottom Bar -->
+    <div style="padding: 10px; border-top: 1px solid #eee; display: flex; gap: 8px; background: white;">
+        <input type="text" id="studentInputField" placeholder="Apna sawal likhiye..." style="flex: 1; padding: 10px; border-radius: 20px; border: 1px solid #ccc; outline: none; font-size: 14px;" onkeypress="handleChatEnter(event)">
+        <button onclick="processStudentQuery()" style="background: #007bff; color: white; border: none; padding: 8px 15px; border-radius: 20px; font-weight: bold; cursor: pointer; font-size: 14px;">Send</button>
+    </div>
+</div>
+
+<script>
+    // 1. Toggle Windows View Port Open / Close Function
+    function toggleChatWindow() {
+        const chatWin = document.getElementById('ai-chat-window');
+        const chatBubble = document.getElementById('ai-chat-bubble');
+        if (chatWin.style.display === 'none' || chatWin.style.display === '') {
+            chatWin.style.display = 'flex';
+            chatBubble.style.transform = 'scale(0.9) rotate(90deg)';
+        } else {
+            chatWin.style.display = 'none';
+            chatBubble.style.transform = 'scale(1) rotate(0deg)';
+        }
+    }
+
+    // 2. Handle Enter Key Press Processing
+    function handleChatEnter(event) {
+        if (event.key === 'Enter') {
+            processStudentQuery();
+        }
+    }
+
+    // 3. Process Prompt Context Logic and Dynamic Content Appends
+    function processStudentQuery() {
+        const inputField = document.getElementById('studentInputField');
+        const userText = inputField.value.trim();
+        if (userText === "") return;
+
+        const chatLogs = document.getElementById('chatLogsArea');
+
+        // Append User Message Logs
+        const userMsgDiv = document.createElement('div');
+        userMsgDiv.style = "background: #007bff; color: white; padding: 10px; border-radius: 8px; max-width: 85%; align-self: flex-end; line-height: 1.4;";
+        userMsgDiv.innerText = userText;
+        chatLogs.appendChild(userMsgDiv);
+
+        // Clear input early for focus management
+        inputField.value = "";
+        chatLogs.scrollTop = chatLogs.scrollHeight;
+
+        // Trigger Typing State Prompt
+        setTimeout(() => {
+            let botReplyText = "Muje afsos hai, mai is sawal ka jawab abhi khoj raha hu. Aap ye doubt Ravindra sir se direct center par pooch sakte hain! 👍";
+            const lowerText = userText.toLowerCase();
+
+            // Custom Rule Engine for Instant Responses
+            if (lowerText.includes('science') || lowerText.includes('vigyan') || lowerText.includes('notes')) {
+                botReplyText = "🔬 Science lectures aur notes ke liye hamari website par 'Science Lectures' section check karein, jahan Google Drive portals linked hain!";
+            } else if (lowerText.includes('math') || lowerText.includes('ganit') || lowerText.includes('table')) {
+                botReplyText = "🔢 Maths ka daily homework aur standard formula notes hamare 'Daily Homework' tab ke andar upload kar diye gaye hain.";
+            } else if (lowerText.includes('homework') || lowerText.includes('gruhkary')) {
+                botReplyText = "📝 Aaj ka daily homework dekhne ke liye website ke sabse upar diye gaye 'Daily Homework Portal' me apni class select karein!";
+            } else if (lowerText.includes('time') || lowerText.includes('timing') || lowerText.includes('batch')) {
+                botReplyText = "⏰ Sun Shine Coaching ki classes standard batches me shaam 3:00 baje se 7:00 baje tak chalti hain.";
+            } else if (lowerText.includes('sir') || lowerText.includes('teacher') || lowerText.includes('ravindra')) {
+                botReplyText = "👨‍🏫 Ravindra Yadav sir Sun Shine Coaching Academy ke senior director hain aur unka experience 5+ saal se zyada ka hai.";
+            }
+
+            // Append AI Response Logs
+            const botMsgDiv = document.createElement('div');
+            botMsgDiv.style = "background: #e1f5fe; color: #0288d1; padding: 10px; border-radius: 8px; max-width: 85%; align-self: flex-start; line-height: 1.4;";
+            botMsgDiv.innerText = botReplyText;
+            chatLogs.appendChild(botMsgDiv);
+            chatLogs.scrollTop = chatLogs.scrollHeight;
+        }, 600);
+    }
+</script>
+<!-- ================= AI DOUBT SOLVER CHATBOT END ================= -->
+
 </html>
