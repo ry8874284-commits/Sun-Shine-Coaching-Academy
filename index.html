@@ -248,7 +248,7 @@
 
 </section>
 <!-- ================================================================= -->
-<!-- 🌟 SUN SHINE UPDATED WHATSAPP INQUIRY PACKAGE 🌟 -->
+<!-- 🌟 SUN SHINE UPDATED WHATSAPP INQUIRY PACKAGE (FIXED LINK) 🌟 -->
 <!-- ================================================================= -->
 
 <!-- 1. SCROLLING NOTICE BOARD -->
@@ -258,7 +258,7 @@
     </marquee>
 </div>
 
-<!-- 2. ONLINE ADMISSION INQUIRY FORM (9670570609 UPDATED) -->
+<!-- 2. ONLINE ADMISSION INQUIRY FORM -->
 <section id="admission-form" style="font-family: Arial, sans-serif; padding: 30px 20px; max-width: 1200px; margin: 30px auto; background: white; border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
     <h2 style="color: #0056b3; text-align: center; margin-bottom: 5px; font-size: 24px;">📝 Online Admission Inquiry</h2>
     <p style="text-align: center; color: #666; font-size: 14px; margin-bottom: 20px;">Form bhariye, ye details direct Ravindra Yadav Sir (9670570609) ke WhatsApp par send ho jayengi!</p>
@@ -292,12 +292,12 @@
     </div>
 </section>
 
-<!-- WHATSAPP LOGIC WITH UPDATED NUMBER -->
+<!-- WHATSAPP INTERACTIVITY SCRIPT -->
 <script>
     function sendInquiryToWhatsApp(event) {
         event.preventDefault();
         
-        // Updated Number: 91 + 9670570609
+        // Sahi link format: Bina kisi bracket ke direct continuous number string
         const myWhatsAppNumber = "919670570609"; 
         
         const name = document.getElementById('waStudentName').value;
@@ -310,8 +310,8 @@
                             `📞 *Parent Contact:* ${phone}%0A%0A` +
                             `Ji mujhe admission ke baare me jankari chahiye.`;
         
-        // Universal wa.me format for better compatibility
-        const whatsappUrl = `https://wa.me{myWhatsAppNumber}?text=${messageText}`;
+        // Universal clear path standard URL format
+        const whatsappUrl = "https://wa.me" + myWhatsAppNumber + "?text=" + messageText;
         
         window.open(whatsappUrl, '_blank');
         event.target.reset();
