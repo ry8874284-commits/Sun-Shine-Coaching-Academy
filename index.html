@@ -292,12 +292,12 @@
     </div>
 </section>
 
-<!-- WHATSAPP INTERACTIVITY SCRIPT -->
+<!-- WHATSAPP INTERACTIVITY SCRIPT (FULLY FIXED FULL URL) -->
 <script>
     function sendInquiryToWhatsApp(event) {
         event.preventDefault();
         
-        // Sahi link format: Bina kisi bracket ke direct continuous number string
+        // India Country code dynamic format
         const myWhatsAppNumber = "919670570609"; 
         
         const name = document.getElementById('waStudentName').value;
@@ -310,14 +310,13 @@
                             `📞 *Parent Contact:* ${phone}%0A%0A` +
                             `Ji mujhe admission ke baare me jankari chahiye.`;
         
-        // Universal clear path standard URL format
-        const whatsappUrl = "https://wa.me" + myWhatsAppNumber + "?text=" + messageText;
+        // Is full URL format se browser direct application ya open web ko link chalayega
+        const whatsappUrl = "https://whatsapp.com" + myWhatsAppNumber + "&text=" + messageText;
         
         window.open(whatsappUrl, '_blank');
         event.target.reset();
     }
 </script>
-<!-- ================================================================= -->
 
 
 <!-- ================= DIGITAL LIBRARY SECTION END ================= -->
