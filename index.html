@@ -6,8 +6,117 @@
   <meta name="description" content="Sun Shine Coaching Academy - Quality coaching with personal attention, values and mentorship.">
   <title>Sun Shine Coaching Academy</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Diwali special styling -->
+  <style>
+    .diwali-special {
+      position: relative;
+      overflow: hidden;
+      margin: 18px auto 28px;
+      padding: 34px 20px;
+      max-width: 1200px;
+      border-radius: 20px;
+      color: #fff;
+      text-align: center;
+      background: linear-gradient(135deg, #241044, #7b1fa2 48%, #e65100);
+      box-shadow: 0 12px 30px rgba(80, 20, 100, .22);
+      font-family: Arial, sans-serif;
+    }
+    .diwali-special:before, .diwali-special:after {
+      content: "✦  ✧  ✦  ✧  ✦";
+      position: absolute;
+      left: 0; right: 0;
+      color: #ffe082;
+      letter-spacing: 18px;
+      font-size: 20px;
+      opacity: .8;
+    }
+    .diwali-special:before { top: 12px; }
+    .diwali-special:after { bottom: 12px; }
+    .diwali-kicker {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 30px;
+      background: rgba(255,255,255,.13);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+    .diwali-special h2 {
+      margin: 14px 0 8px;
+      color: #ffec9e;
+      font-size: clamp(30px, 5vw, 48px);
+      text-shadow: 0 3px 12px rgba(0,0,0,.25);
+    }
+    .diwali-special p { margin: 8px auto; max-width: 760px; line-height: 1.7; }
+    .diwali-lights { font-size: clamp(25px, 4vw, 38px); margin: 12px 0; }
+    .diwali-actions { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:20px; }
+    .diwali-actions a {
+      display:inline-block; padding:11px 18px; border-radius:30px;
+      text-decoration:none; font-weight:700; background:#ffdf70; color:#542000;
+    }
+    .diwali-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+      gap:16px; max-width:1100px; margin:22px auto 0; text-align:left;
+    }
+    .diwali-card {
+      padding:18px; border-radius:14px; background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.28);
+    }
+    .diwali-card h3 { color:#ffe89a; margin:0 0 8px; font-size:18px; }
+    .diwali-card p { margin:0; font-size:14px; }
+    .diwali-note {
+      max-width:1100px; margin:16px auto 0; padding:16px 18px;
+      border-radius:12px; background:#fff8e1; color:#5d4037;
+      border-left:5px solid #ff9800; line-height:1.7;
+    }
+    @media (max-width:600px) {
+      .diwali-special { margin:12px 10px 22px; padding:30px 15px; }
+      .diwali-special:before, .diwali-special:after { letter-spacing:7px; }
+    }
+  </style>
+
 </head>
 <body>
+
+<!-- ================= DIWALI SPECIAL UPDATE START ================= -->
+<section class="diwali-special" id="diwali-special">
+  <span class="diwali-kicker">SUN SHINE COACHING ACADEMY • FESTIVE SPECIAL</span>
+  <div class="diwali-lights" aria-hidden="true">🪔 ✨ 🪔 ✨ 🪔</div>
+  <h2>Happy Diwali 2026!</h2>
+  <p>May the light of knowledge brighten every home. Let us celebrate this Diwali with creativity, kindness and a clean environment.</p>
+  <div class="diwali-actions">
+    <a href="#diwali-competition">View Drawing Competition</a>
+    <a href="#diwali-speech">Practice Diwali Speech</a>
+  </div>
+
+  <div class="diwali-grid" id="diwali-competition">
+    <article class="diwali-card">
+      <h3>🎨 Drawing Competition</h3>
+      <p>Classes 1 to 5 can participate. Choose a Diwali theme: diya, rangoli, dream house, lantern or Green Diwali.</p>
+    </article>
+    <article class="diwali-card">
+      <h3>🏆 Prize Categories</h3>
+      <p>Junior: Classes 1–2 • Middle: Classes 3–4 • Senior: Class 5. Creativity, colouring and neatness will be appreciated.</p>
+    </article>
+    <article class="diwali-card">
+      <h3>🌱 Green Diwali Pledge</h3>
+      <p>Celebrate with diyas, smiles and sweets. Avoid noisy crackers and keep our surroundings clean.</p>
+    </article>
+    <article class="diwali-card" id="diwali-speech">
+      <h3>🎤 5-Line Diwali Speech</h3>
+      <p>Diwali is my favourite festival. It is a festival of lights. I love Diwali. We light diyas. Happy Diwali to all!</p>
+    </article>
+  </div>
+</section>
+
+<div class="diwali-note">
+  <strong>📢 Student Update:</strong> All students are encouraged to take part in the Diwali activities.
+  Please bring your drawing colours and pencils on the announced activity day. Competition date and timing will be shared separately by the academy.
+</div>
+<!-- ================= DIWALI SPECIAL UPDATE END ================= -->
+
 
 <header class="hero">
   <nav class="nav">
@@ -15,7 +124,6 @@
       <div class="logo">SS</div>
       <div>
         <h1><b>Sun Shine Coaching Academy</b></h1>
-        <h2>HAPPY DIWALI!</h2>
         <span>Education for Success, Values for Life</span>
       </div>
     </div>
@@ -69,7 +177,7 @@
                     <strong style="color: #2c3e50; font-size: 14px; display: block;">📝 Hindi Medium (All In One Navodaya)</strong>
                     <span style="font-size: 12px; color: #7f8c8d; display:block; margin: 3px 0 8px 0;">Mental Ability, Maths & Unseen Hindi Passages</span>
                     <!-- ✅ Direct Channel Page Link Fixed -->
-                   <a href="http://www.youtube.com/@vedanavodayaexam" target="_blank" style="display: inline-block; background: #3498db; color: white; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold;">▶️ Open Official Channel</a>
+                   <a href="https://www.youtube.com/@vedanavodayaexam" target="_blank" style="display: inline-block; background: #3498db; color: white; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold;">▶️ Open Official Channel</a>
                 </div>
 
                 <!-- English Medium Block -->
@@ -77,7 +185,7 @@
                     <strong style="color: #2c3e50; font-size: 14px; display: block;">🔤 English Medium (DronSchool Channel)</strong>
                     <span style="font-size: 12px; color: #7f8c8d; display:block; margin: 3px 0 8px 0;">English Grammar, Advance Mathematics & Logic Figures</span>
                     <!-- ✅ Direct Channel Page Link Fixed -->
-                    <a href="http://www.youtube.com/@mydronschool" target="_blank" style="display: inline-block; background: #3498db; color: white; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold;">▶️ Open Official Channel</a>
+                    <a href="https://www.youtube.com/@mydronschool" target="_blank" style="display: inline-block; background: #3498db; color: white; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold;">▶️ Open Official Channel</a>
                 </div>
             </div>
             <span style="font-size: 11px; color: #7f8c8d; font-weight: 600;">💡 Tip: Navodaya exam ke liye DronSchool aur AllInOne sabse behtareen maane jaate hain.</span>
@@ -94,7 +202,7 @@
                     <strong style="color: #2c3e50; font-size: 14px; display: block;">📝 Hindi Medium (BHU Pathshala)</strong>
                     <span style="font-size: 12px; color: #7f8c8d; display:block; margin: 3px 0 8px 0;">Syllabus Strategy, Revision Classes & Previous Years Papers</span>
                     <!-- ✅ Direct Channel Page Link Fixed -->
-                    <a href="http://www.youtube.com/@AllRounderBSS" target="_blank" style="display: inline-block; background: #1e3a8a; color: white; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold;">▶️ Open Official Channel</a>
+                    <a href="https://www.youtube.com/@AllRounderBSS" target="_blank" style="display: inline-block; background: #1e3a8a; color: white; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold;">▶️ Open Official Channel</a>
                 </div>
 
                 <!-- English Medium Block -->
@@ -102,7 +210,7 @@
                     <strong style="color: #2c3e50; font-size: 14px; display: block;">🔤 English Medium (Malviya Academy)</strong>
                     <span style="font-size: 12px; color: #7f8c8d; display:block; margin: 3px 0 8px 0;">CHS Level Science, English Foundation & Mental Aptitude</span>
                     <!-- ✅ Direct Channel Page Link Fixed -->
-                    <a href="http://www.youtube.com/@CHSBHUMalviyaAcademy" target="_blank" style="display: inline-block; background: #27ae60; color: white; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold;">▶️ Open Official Channel</a>
+                    <a href="https://www.youtube.com/@CHSBHUMalviyaAcademy" target="_blank" style="display: inline-block; background: #27ae60; color: white; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold;">▶️ Open Official Channel</a>
                 </div>
             </div>
             <span style="font-size: 11px; color: #7f8c8d; font-weight: 600;">⭐ Tip: CHS (BHU) ke liye Malviya Academy aur BHU Pathshala sabse bade platforms hain.</span>
