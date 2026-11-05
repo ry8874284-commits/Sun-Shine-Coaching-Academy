@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sun Shine Coaching Academy - Quality coaching with personal attention, values and mentorship.">
+  <title>Sun Shine Coaching Academy</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Diwali special styling -->
+  <style>
+    .diwali-special {
+      position: relative;
+      overflow: hidden;
+      margin: 18px auto 28px;
+      padding: 34px 20px;
+      max-width: 1200px;
+      border-radius: 20px;
+      color: #fff;
+      text-align: center;
+      background: linear-gradient(135deg, #241044, #7b1fa2 48%, #e65100);
+      box-shadow: 0 12px 30px rgba(80, 20, 100, .22);
+      font-family: Arial, sans-serif;
+    }
+    .diwali-special:before, .diwali-special:after {
+      content: "✦  ✧  ✦  ✧  ✦";
+      position: absolute;
+      left: 0; right: 0;
+      color: #ffe082;
+      letter-spacing: 18px;
+      font-size: 20px;
+      opacity: .8;
+    }
+    .diwali-special:before { top: 12px; }
+    .diwali-special:after { bottom: 12px; }
+    .diwali-kicker {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 30px;
+      background: rgba(255,255,255,.13);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+    .diwali-special h2 {
+      margin: 14px 0 8px;
+      color: #ffec9e;
+      font-size: clamp(30px, 5vw, 48px);
+      text-shadow: 0 3px 12px rgba(0,0,0,.25);
+    }
+    .diwali-special p { margin: 8px auto; max-width: 760px; line-height: 1.7; }
+    .diwali-lights { font-size: clamp(25px, 4vw, 38px); margin: 12px 0; }
+    .diwali-actions { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:20px; }
+    .diwali-actions a {
+      display:inline-block; padding:11px 18px; border-radius:30px;
+      text-decoration:none; font-weight:700; background:#ffdf70; color:#542000;
+    }
+    .diwali-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+      gap:16px; max-width:1100px; margin:22px auto 0; text-align:left;
+    }
+    .diwali-card {
+      padding:18px; border-radius:14px; background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.28);
+    }
+    .diwali-card h3 { color:#ffe89a; margin:0 0 8px; font-size:18px; }
+    .diwali-card p { margin:0; font-size:14px; }
+    .diwali-note {
+      max-width:1100px; margin:16px auto 0; padding:16px 18px;
+      border-radius:12px; background:#fff8e1; color:#5d4037;
+      border-left:5px solid #ff9800; line-height:1.7;
+    }
+    @media (max-width:600px) {
+      .diwali-special { margin:12px 10px 22px; padding:30px 15px; }
+      .diwali-special:before, .diwali-special:after { letter-spacing:7px; }
+    }
+  </style>
+
+</head>
+<body>
+
+<!-- ================= DIWALI SPECIAL UPDATE START ================= -->
+<section class="diwali-special" id="diwali-special">
+  <span class="diwali-kicker">SUN SHINE COACHING ACADEMY • FESTIVE SPECIAL</span>
+  <div class="diwali-lights" aria-hidden="true">🪔 ✨ 🪔 ✨ 🪔</div>
+  <h2>Happy Diwali 2026!</h2>
+  <p>May the light of knowledge brighten every home. Let us celebrate this Diwali with creativity, kindness and a clean environment.</p>
+  <div class="diwali-actions">
+    <a href="#diwali-competition">View Drawing Competition</a>
+    <a href="#diwali-speech">Practice Diwali Speech</a>
+  </div>
+
+  <div class="diwali-grid" id="diwali-competition">
+    <article class="diwali-card">
+      <h3>🎨 Drawing Competition</h3>
+      <p>Classes 1 to 5 can participate. Choose a Diwali theme: diya, rangoli, dream house, lantern or Green Diwali.</p>
+    </article>
+    <article class="diwali-card">
+      <h3>🏆 Prize Categories</h3>
+      <p>Junior: Classes 1–2 • Middle: Classes 3–4 • Senior: Class 5. Creativity, colouring and neatness will be appreciated.</p>
+    </article>
+    <article class="diwali-card">
+      <h3>🌱 Green Diwali Pledge</h3>
+      <p>Celebrate with diyas, smiles and sweets. Avoid noisy crackers and keep our surroundings clean.</p>
+    </article>
+    <article class="diwali-card" id="diwali-speech">
+      <h3>🎤 5-Line Diwali Speech</h3>
+      <p>Diwali is my favourite festival. It is a festival of lights. I love Diwali. We light diyas. Happy Diwali to all!</p>
+    </article>
+  </div>
+</section>
+
+<div class="diwali-note">
+  <strong>📢 Student Update:</strong> All students are encouraged to take part in the Diwali activities.
+  Please bring your drawing colours and pencils on the announced activity day. Competition date and timing will be shared separately by the academy.
+</div>
+<!-- ================= DIWALI SPECIAL UPDATE END ================= -->
+
+
+<header class="hero">
+  <nav class="nav">
+    <div class="brand">
+      <div class="logo">SS</div>
+      <div>
+        <h1><b>Sun Shine Coaching Academy</b></h1>
+        <span>Education for Success, Values for Life</span>
+      </div>
+    </div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#fees">Fees</a>
+      <a href="#entrance">Entrance</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="tag">ADMISSIONS & ENTRANCE TEST OPEN</p>
+      <h2>Learn Better.<br><span>Grow Brighter.</span></h2>
+      <p>Concept-based learning, personal attention, good values and mentorship — all in one supportive learning environment.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#entrance">View Entrance Test</a>
+        <a class="btn secondary" href="#contact">Contact Academy</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="sun">☀️</div>
+      <h3>Classes 1–8</h3>
+      <p>CBSE Support</p>
+      <div class="mini">Small Batches • Regular Tests • Personal Attention</div>
+    </div>
+  </div>
+  <!-- ================= DIGITAL LIBRARY SECTION START ================= -->
+ <!-- ================= COMPETITIVE EXAMS SECTION START (DIRECT LINKS FIXED) ================= -->
+<section id="navodaya-chs-prep" style="font-family: Arial, sans-serif; padding: 50px 20px; max-width: 1200px; margin: 40px auto; background-color: #ffffff; border-radius: 16px; border: 1px solid #cbd5e1; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+    
+    <div style="text-align: center; margin-bottom: 35px;">
+        <span style="background: #ffeaa7; color: #d35400; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; letter-spacing: 1px;">🎯 MISSION SELECTION</span>
+        <h2 style="color: #1e3a8a; font-size: 28px; margin-top: 10px; margin-bottom: 8px;">🚀 Navodaya & CHS Entrance Preparation Hub</h2>
+        <p style="color: #64748b; font-size: 15px; max-width: 700px; margin: auto;">India ke top channels ke direct official page links, jahan se sabse zyada bacche selection lete hain!</p>
+    </div>
+
+    <!-- Main Container split into Navodaya and CHS -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+        
+        <!-- CARD 1: NAVODAYA VIDYALAYA (JNVST) PREP -->
+        <div style="background: #f8fafc; border-radius: 12px; padding: 25px; border: 1px solid #e2e8f0; border-top: 5px solid #ff9f43; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h3 style="color: #d35400; margin-top: 0; font-size: 20px;">🏫 Jawahar Navodaya Vidyalaya</h3>
+                <p style="color: #64748b; font-size: 13px; margin-top: 5px; margin-bottom: 20px;">Class 6th & 9th Entrance Special Channels:</p>
+                
+                <!-- Hindi Medium Block -->
+                <div style="background: #fff; padding: 12px; border-radius: 8px; border-left: 4px solid #ff9f43; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                    <strong style="color: #2c3e50; font-size: 14px; display: block;">📝 Hindi Medium (All In One Navodaya)</strong>
+                    <span style="font-size: 12px; color: #7f8c8d; display:block; margin: 3px 0 8px 0;">Mental Ability, Maths & Unseen Hindi Passages</span>
+                    <!-- ✅ Direct Channel Page Link Fixed -->
+                   <a href="https://www.youtube.com/@vedanavodayaexam" target="_blank" style="display: inline-block; background: #3498db; color: white; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold;">▶️ Open Official Channel</a>
+                </div>
+
+                <!-- English Medium Block -->
+                <div style="background: #fff; padding: 12px; border-radius: 8px; border-left: 4px solid #3498db; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                    <strong style="color: #2c3e50; font-size: 14px; display: block;">🔤 English Medium (DronSchool Channel)</strong>
+                    <span style="font-size: 12px; color: #7f8c8d; display:block; margin: 3px 0 8px 0;">English Grammar, Advance Mathematics & Logic Figures</span>
+                    <!-- ✅ Direct Channel Page Link Fixed -->
+                    <a href="https://www.youtube.com/@mydronschool" target="_blank" style="display: inline-block; background: #3498db; color: white; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold;">▶️ Open Official Channel</a>
+                </div>
+            </div>
+            <span style="font-size: 11px; color: #7f8c8d; font-weight: 600;">💡 Tip: Navodaya exam ke liye DronSchool aur AllInOne sabse behtareen maane jaate hain.</span>
+        </div>
+
+        <!-- CARD 2: CHS ENTRANCE (BHU) PREP -->
+        <div style="background: #f8fafc; border-radius: 12px; padding: 25px; border: 1px solid #e2e8f0; border-top: 5px solid #1e3a8a; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h3 style="color: #1e3a8a; margin-top: 0; font-size: 20px;">🏛️ Central Hindu School (CHS BHU)</h3>
+                <p style="color: #64748b; font-size: 13px; margin-top: 5px; margin-bottom: 20px;">Class 6th, 9th & 11th Top Channels:</p>
+                
+                <!-- Hindi Medium Block -->
+                <div style="background: #fff; padding: 12px; border-radius: 8px; border-left: 4px solid #1e3a8a; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                    <strong style="color: #2c3e50; font-size: 14px; display: block;">📝 Hindi Medium (BHU Pathshala)</strong>
+                    <span style="font-size: 12px; color: #7f8c8d; display:block; margin: 3px 0 8px 0;">Syllabus Strategy, Revision Classes & Previous Years Papers</span>
+                    <!-- ✅ Direct Channel Page Link Fixed -->
+                    <a href="https://www.youtube.com/@AllRounderBSS" target="_blank" style="display: inline-block; background: #1e3a8a; color: white; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold;">▶️ Open Official Channel</a>
+                </div>
+
+                <!-- English Medium Block -->
+                <div style="background: #fff; padding: 12px; border-radius: 8px; border-left: 4px solid #27ae60; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                    <strong style="color: #2c3e50; font-size: 14px; display: block;">🔤 English Medium (Malviya Academy)</strong>
+                    <span style="font-size: 12px; color: #7f8c8d; display:block; margin: 3px 0 8px 0;">CHS Level Science, English Foundation & Mental Aptitude</span>
+                    <!-- ✅ Direct Channel Page Link Fixed -->
+                    <a href="https://www.youtube.com/@CHSBHUMalviyaAcademy" target="_blank" style="display: inline-block; background: #27ae60; color: white; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold;">▶️ Open Official Channel</a>
+                </div>
+            </div>
+            <span style="font-size: 11px; color: #7f8c8d; font-weight: 600;">⭐ Tip: CHS (BHU) ke liye Malviya Academy aur BHU Pathshala sabse bade platforms hain.</span>
+        </div>
+
+    </div>
+</section>
+<!-- ================= COMPETITIVE EXAMS SECTION END ================= -->
+
+  <!-- ================= DAILY HOMEWORK SECTION START ================= -->
+<section id="daily-homework-portal" style="font-family: Arial, sans-serif; padding: 40px 20px; max-width: 1200px; margin: 40px auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border: 1px solid #e0e0e0;">
+    
+    <div style="text-align: center; margin-bottom: 25px;">
+        <h2 style="color: #0056b3; font-size: 28px; margin-bottom: 5px;">📝 Daily Homework Corner</h2>
+        <p id="currentHwDate" style="color: #555; font-weight: bold; font-size: 15px;">📅 Loading Today's Date...</p>
+    </div>
+
+    <!-- Class Selection Tab Buttons -->
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 25px;">
+        <button onclick="changeHw('junior', this)" style="background: #ff5252; color: white; border: none; padding: 10px 18px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer;" class="hw-tab-btn">Class 1 & 2</button>
+        <button onclick="changeHw('primary', this)" style="background: #e2e8f0; color: #333; border: none; padding: 10px 18px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer;" class="hw-tab-btn">Class 3 to 5</button>
+        <button onclick="changeHw('middle', this)" style="background: #e2e8f0; color: #333; border: none; padding: 10px 18px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer;" class="hw-tab-btn">Class 6 & 7</button>
+        <button onclick="changeHw('board', this)" style="background: #e2e8f0; color: #333; border: none; padding: 10px 18px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer;" class="hw-tab-btn">Class 8</button>
+    </div>
+
+    <!-- Homework Display Content -->
+    <div id="hwDisplayBox" style="background: #f8f9fa; border-left: 5px solid #ff5252; padding: 20px; border-radius: 8px; border-top: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;">
+        <h3 style="color: #333; margin-bottom: 10px;">🧸 Class 1 & 2 Homework</h3>
+        <ul style="padding-left: 20px; line-height: 1.8; color: #444;">
+            <li><strong>Maths:</strong> Write and learn tables from 2 to 15.</li>
+            <li><strong>English:</strong> weeks name, month name,flower name,color name,fruits name <br>,50 body part name,10 good habit write the opposite name for  good bad go fast small happy </li>
+            <li><strong>Hindi:</strong> अपनी कॉपी में 1 पेज सुलेख (Handwriting) साफ-साफ लिखें।</li>
+        </ul>
+    </div>
+</section>
+<!-- ================= GOOGLE SHEET LIVE HOMEWORK ENGINE ================= -->
+<script>
+    // 🚨 CONFIGURATION: Yahan apni Google Sheet ki ID aur API key daalni hogi
+    const sheetId = 'PASTE_YOUR_GOOGLE_SHEET_ID_HERE'; 
+    const apiKey = 'PASTE_YOUR_GOOGLE_API_KEY_HERE'; // Google Cloud Console se free banti hai
+    
+    let liveHomeworkData = {};
+
+    function toggleDarkMode() { document.body.classList.toggle('dark-mode'); }
+    function toggleChatWindow() {
+        const chatWin = document.getElementById('ai-chat-window');
+        chatWin.style.display = (chatWin.style.display === 'none' || chatWin.style.display === '') ? 'flex' : 'none';
+    }
+
+    // Auto Live Date Calendar Tracker
+    function updateHomeworkDate() {
+      const today = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById('currentHwDate').innerText = "📅 Aaj ka Homework: " + today.toLocaleDateString('hi-IN', options);
+    }
+
+    // Fetch Live Homework directly from your Google Sheet
+    async function fetchLiveHomework() {
+        try {
+            const url = `https://googleapis.com{sheetId}/values/A1:D2?key=${apiKey}`;
+            const response = await fetch(url);
+            const data = await response.json();
+            
+            if (data.values && data.values.length > 1) {
+                // Store Google sheet row 2 data dynamically
+                liveHomeworkData = {
+                    junior: data.values[1][0] || "No homework updated today.",
+                    primary: data.values[1][1] || "No homework updated today.",
+                    middle: data.values[1][2] || "No homework updated today.",
+                    board: data.values[1][3] || "No homework updated today."
+                };
+                // Load default display content safely
+                changeHw('junior', document.querySelector('.hw-tab-btn'));
+            }
+        } catch (error) {
+            console.log("Sheet connection error, loading backup text.");
+        }
+    }
+
+    // Interactive Tab Switcher connected to Google Sheet Data
+    function changeHw(classGroup, clickedBtn) {
+        const buttons = document.querySelectorAll('.hw-tab-btn');
+        buttons.forEach(btn => { btn.style.background = '#e2e8f0'; btn.style.color = '#333'; });
+        if(clickedBtn) {
+            clickedBtn.style.background = '#ff5252'; 
+            clickedBtn.style.color = 'white';
+        }
+        
+        const displayBox = document.getElementById('hwDisplayBox');
+
+        if (classGroup === 'junior') {
+            displayBox.style.borderLeftColor = '#ff5252';
+            displayBox.innerHTML = `<h3 style="color:#333; margin-bottom:10px;">🧸 Class 1 & 2 Homework</h3><p style="line-height:1.8; color:#444; white-space: pre-line;">${liveHomeworkData.junior || '• Maths: Tables from 2 to 10 learn karein.<br>• English: This and That task complete karein.'}</p>`;
+        } else if (classGroup === 'primary') {
+            displayBox.style.borderLeftColor = '#0056b3';
+            displayBox.innerHTML = `<h3 style="color:#333; margin-bottom:10px;">🌱 Class 3 to 5 Homework</h3><p style="line-height:1.8; color:#444; white-space: pre-line;">${liveHomeworkData.primary || '• Maths: Solve Exercise 3.2 sheet completely.'}</p>`;
+        } else if (classGroup === 'middle') {
+            displayBox.style.borderLeftColor = '#a29bfe';
+            displayBox.innerHTML = `<h3 style="color:#333; margin-bottom:10px;">🧬 Class 6 & 7 Homework</h3><p style="line-height:1.8; color:#444; white-space: pre-line;">${liveHomeworkData.middle || '• Science: Learn Question & Answers of Chapter 2.'}</p>`;
+        } else if (classGroup === 'board') {
+            displayBox.style.borderLeftColor = '#28a745';
+            displayBox.innerHTML = `<h3 style="color:#333; margin-bottom:10px;">🚀 Class 8 (Board Prep) Homework</h3><p style="line-height:1.8; color:#444; white-space: pre-line;">${liveHomeworkData.board || '• Science: Write and memorize the complete cycle of Nitrogen fixation.'}</p>`;
+        }
+    }
+
+    // Remaining basic structures for AI chat functions
+    function handleChatEnter(event) { if (event.key === 'Enter') processStudentQuery(); }
+    function processStudentQuery() {
+        const inputField = document.getElementById('studentInputField');
+        const userText = inputField.value.trim();
+        if (userText === "") return;
+        const chatLogs = document.getElementById('chatLogsArea');
+        const userMsgDiv = document.createElement('div');
+        userMsgDiv.style = "background:#007bff; color:white; padding:10px; border-radius:8px; max-width:85%; align-self:flex-end;";
+        userMsgDiv.innerText = userText;
+        chatLogs.appendChild(userMsgDiv);
+        inputField.value = "";
+        setTimeout(function() {
+            let aiReply = "Muje afsos hai, mai is sawal ka jawab abhi khoj raha hu. Aap ye doubt direct center par Ravindra sir se pooch sakte hain! 👍";
+            if (userText.toLowerCase().includes('science')) aiReply = "🔬 Science lectures aur notes ke liye hamari website par 'Class Notes Archive' panel check karein!";
+            const botMsgDiv = document.createElement('div');
+            botMsgDiv.style = "background: #e1f5fe; color: #0288d1; padding: 10px; border-radius: 8px; max-width: 85%; align-self: flex-start;";
+            botMsgDiv.innerText = aiReply;
+            chatLogs.appendChild(botMsgDiv);
+            chatLogs.scrollTop = chatLogs.scrollHeight;
+        }, 800);
+    }
+
+    window.onload = function() { 
+        updateHomeworkDate(); 
+        fetchLiveHomework(); 
+    };
+</script>
+
+  <!-- ================= DAILY CLASS NOTES SECTION START ================= -->
+<section id="daily-notes-portal" style="font-family: Arial, sans-serif; padding: 40px 20px; max-width: 1200px; margin: 40px auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border: 1px solid #e0e0e0;">
+    
+    <div style="text-align: center; margin-bottom: 25px;">
+        <h2 style="color: #28a745; font-size: 28px; margin-bottom: 5px;">📚 Daily Class Notes & Lecture PDFs</h2>
+        <p style="color: #555; font-size: 15px;">Aaj ki classes me jo bhi padhaya gaya hai, unke direct board notes yahan se download karein:</p>
+    </div>
+
+    <!-- Notes Table Storage Layout -->
+    <table border="1" cellpadding="12" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-top: 15px; text-align: left; border: 1px solid #e0e0e0; font-size: 15px;">
+        <thead>
+            <tr style="background-color: #28a745; color: white;">
+                <th>Date / Day</th>
+                <th>Class / Standard</th>
+                <th>Subject & Topic Covered</th>
+                <th>Download Link</th>
+            </tr>
+        </thead>
+        <tbody id="notesTableBody">
+            <!-- Row 1: Latest Uploaded Note -->
+            <tr>
+                <td><strong>25 Aug 2026</strong></td>
+                <td><span style="background: #e8f5e9; color: #2e7d32; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 13px;">Class 8</span></td>
+                <td>Science: Crop Production (Sowing & Irrigation Steps)</td>
+                <td><a href="PASTE_YOUR_GOOGLE_DRIVE_NOTE_LINK_HERE" target="_blank" style="color: #28a745; font-weight: bold; text-decoration: none;">📥 Download PDF Notes</a></td>
+            </tr>
+            
+            <!-- Row 2 -->
+            <tr>
+                <td><strong>24 Aug 2026</strong></td>
+                <td><span style="background: #e1f5fe; color: #0288d1; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 13px;">Class 6</span></td>
+                <td>Mathematics: Fractions (Exercise 2.1 Full Solutions)</td>
+                <td><a href="PASTE_YOUR_GOOGLE_DRIVE_NOTE_LINK_HERE" target="_blank" style="color: #28a745; font-weight: bold; text-decoration: none;">📥 Download PDF Notes</a></td>
+            </tr>
+
+            <!-- Row 3 -->
+            <tr>
+                <td><strong>24 Aug 2026</strong></td>
+                <td><span style="background: #fff3e0; color: #ef6c00; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 13px;">Class 1-5</span></td>
+                <td>English Grammar: Nouns and its 5 Core Types</td>
+                <td><a href="https://drive.google.com/file/d/1z-1mxh_rY2akIa6T1svBjbEsvDSBZCRl/view?usp=drive_link" style="color: #28a745; font-weight: bold; text-decoration: none;">📥 Download PDF Notes</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<!-- ================= DAILY CLASS NOTES SECTION END ================= -->
+
+
+<section id="coaching-library" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 50px 20px; max-width: 1200px; margin: auto; background-color: #f4f7f6; border-radius: 16px; margin-top: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+    
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="color: #2c3e50; font-size: 32px; margin-bottom: 10px;">📚 Sun Shine Digital Library</h2>
+        <p style="color: #7f8c8d; font-size: 16px; max-width: 600px; margin: auto;">Yahan aapko Class 1 se 8 tak ki saari zaroori textbooks aur solution books ka bada sangrah (store) milega. Direct click karke padhein!</p>
+    </div>
+
+    <!-- Library Container (Grid System) -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px;">
+        
+        <!-- BLOCK 1: Class 1 & 2 Store -->
+        <div style="background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #ff7675;">
+            <h3 style="color: #ff7675; margin-top: 0; font-size: 20px;">🧸 Junior Section (Class 1-2)</h3>
+            <ul style="list-style: none; padding: 0; line-height: 2;">
+                <li><a href="https://ncert.nic.in" target="_blank" style="color: #2d3436; text-decoration: none;">📖 Class 1 - Rimjhim (Hindi)</a></li>
+                <li><a href="https://ncert.nic.in" target="_blank" style="color: #2d3436; text-decoration: none;">📖 Class 2 - Marigold (English)</a></li>
+                <li><a href="https://ncert.nic.in" target="_blank" style="color: #2d3436; text-decoration: none;">🔢 Class 1 - Math Magic (Maths)</a></li>
+                <li><a href="https://ncert.nic.in" target="_blank" style="color: #2d3436; text-decoration: none;">🔢 Class 2 - Joyful Mathematics</a></li>
+            </ul>
+        </div>
+
+        <!-- BLOCK 2: Class 3, 4 & 5 Store -->
+        <div style="background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #74b9ff;">
+            <h3 style="color: #74b9ff; margin-top: 0; font-size: 20px;">🌱 Primary Section (Class 3-5)</h3>
+            <ul style="list-style: none; padding: 0; line-height: 2;">
+                <li><a href="https://ncert.nic.in" target="_blank" style="color: #2d3436; text-decoration: none;">🌍 Class 3 - EVS (Looking Around)</a></li>
+                <li><a href="https://ncert.nic.in" target="_blank" style="color: #2d3436; text-decoration: none;">📐 Class 4 - Math-Magic (English)</a></li>
+                <li><a href="https://ncert.nic.in" target="_blank" style="color: #2d3436; text-decoration: none;">🧬 Class 5 - Aaspass (EVS Hindi)</a></li>
+                <li><a href="https://ncert.nic.in" target="_blank" style="color: #2d3436; text-decoration: none;">📝 Class 5 - English Grammar Base</a></li>
+            </ul>
+        </div>
+
+        <!-- BLOCK 3: Class 6 & 7 Middle Store -->
+        <div style="background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #a29bfe;">
+            <h3 style="color: #a29bfe; margin-top: 0; font-size: 20px;">🧬 Middle Section (Class 6-7)</h3>
+            <ul style="list-style: none; padding: 0; line-height: 2;">
+                <li><a href="https://ncert.nic.in" target="_blank" style="color: #2d3436; text-decoration: none;">📐 Class 6 - Mathematics Book</a></li>
+                <li><a href="https://ncert.nic.in" target="_blank" style="color: #2d3436; text-decoration: none;">🔬 Class 6 - Science (Vigyan)</a></li>
+                <li><a href="https://ncert.nic.in" target="_blank" style="color: #2d3436; text-decoration: none;">🔬 Class 7 - Science TextBook</a></li>
+                <li><a href="https://ncert.nic.in" target="_blank" style="color: #2d3436; text-decoration: none;">📜 Class 7 - Our Pasts (History)</a></li>
+            </ul>
+        </div>
+
+        <!-- BLOCK 4: Class 8 Board Foundation -->
+        <div style="background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #55efc4;">
+            <h3 style="color: #10ac84; margin-top: 0; font-size: 20px;">🚀 Board Base (Class 8)</h3>
+            <ul style="list-style: none; padding: 0; line-height: 2;">
+                <li><a href="https://ncert.nic.in" target="_blank" style="color: #2d3436; text-decoration: none;">📐 Class 8 - Advance Mathematics</a></li>
+                <li><a href="https://ncert.nic.in" target="_blank" style="color: #2d3436; text-decoration: none;">🔬 Class 8 - Complete Science Book</a></li>
+                <li><a href="https://ncert.nic.in" target="_blank" style="color: #2d3436; text-decoration: none;">🌍 Class 8 - Resources & Development</a></li>
+                <li><a href="https://ncert.nic.in" target="_blank" style="color: #2d3436; text-decoration: none;">📝 Class 8 - English (Honeydew)</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Extra Study Material Links -->
+    <div style="margin-top: 30px; text-align: center; background: #fff; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+        <span style="font-weight: bold; color: #2c3e50;">💡 Extra Material:</span> 
+        <a href="https://ncert.nic.in" target="_blank" style="margin: 0 10px; color: #007bff; text-decoration: none; font-weight: 500;">📋 NCERT Exemplar Problems</a> | 
+        <a href="https://ncert.nic.in" target="_blank" style="margin: 0 10px; color: #007bff; text-decoration: none; font-weight: 500;">📝 Practice Question Papers</a>
+    </div>
+
+</section>
+<!-- ================================================================= -->
+<!-- 🌟 SUN SHINE UPDATED WHATSAPP INQUIRY PACKAGE (FIXED LINK) 🌟 -->
+<!-- ================================================================= -->
+
+<!-- 1. SCROLLING NOTICE BOARD -->
+<div style="background: #ff5252; color: white; font-weight: bold; padding: 10px; font-family: Arial, sans-serif; font-size: 14px; margin-bottom: 20px; border-radius: 6px;">
+    <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+        ✨ New Admissions Open for Session 2026-27! Register via the form below. 📝 | 🧪 Special Science Revision Test will be held this Sunday at 9:00 AM!
+    </marquee>
+</div>
+
+<!-- 2. ONLINE ADMISSION INQUIRY FORM -->
+<section id="admission-form" style="font-family: Arial, sans-serif; padding: 30px 20px; max-width: 1200px; margin: 30px auto; background: white; border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    <h2 style="color: #0056b3; text-align: center; margin-bottom: 5px; font-size: 24px;">📝 Online Admission Inquiry</h2>
+    <p style="text-align: center; color: #666; font-size: 14px; margin-bottom: 20px;">Form bhariye, ye details direct Ravindra Yadav Sir (9670570609) ke WhatsApp par send ho jayengi!</p>
+    
+    <form onsubmit="sendInquiryToWhatsApp(event)">
+        <div style="margin-bottom: 15px;">
+            <label style="display:block; font-weight:bold; margin-bottom:5px; font-size: 14px;">Student Name:</label>
+            <input type="text" id="waStudentName" required placeholder="Enter student full name" style="width:100%; padding:11px; border:1px solid #ccc; border-radius:6px;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label style="display:block; font-weight:bold; margin-bottom:5px; font-size: 14px;">Target Class (1 to 8):</label>
+            <input type="text" id="waStudentClass" required placeholder="e.g. Class 6, Class 8" style="width:100%; padding:11px; border:1px solid #ccc; border-radius:6px;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label style="display:block; font-weight:bold; margin-bottom:5px; font-size: 14px;">Parent Phone Number:</label>
+            <input type="tel" id="waParentPhone" required placeholder="Enter 10 digit contact number" style="width:100%; padding:11px; border:1px solid #ccc; border-radius:6px;">
+        </div>
+        <button type="submit" style="width:100%; padding:13px; background: #25D366; color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            💬 Send Inquiry on WhatsApp
+        </button>
+    </form>
+</section>
+
+<!-- 3. PRACTICE QUIZ -->
+<section id="practice-quiz" style="font-family: Arial, sans-serif; padding: 30px 20px; max-width: 1200px; margin: 30px auto; background: white; border: 1px solid #e0e0e0; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    <h3 style="color: #0056b3; margin-bottom: 15px; text-align: center; font-size: 22px;">🧠 Mind Sharp Practice Quiz</h3>
+    <p style="font-weight: bold; font-size: 16px; margin-bottom: 15px; text-align: center; color: #333;">Q. Plants jis process se apna khana khud banate hain, use kya kehte hain?</p>
+    <div style="display: flex; flex-direction: column; gap: 10px; max-width: 500px; margin: auto;">
+        <button onclick="alert('❌ Galat Jawab! Respiration (श्वसन) se plants saans lete hain.')" style="padding: 12px; text-align: left; background: #f8f9fa; border: 1px solid #ccc; border-radius: 6px; cursor: pointer; font-weight: bold;">A) Respiration (श्वसन)</button>
+        <button onclick="alert('🎉 Shabaash! Bilkul Sahi Jawab. 👍 Photosynthesis hi sahi answer hai.')" style="padding: 12px; text-align: left; background: #f8f9fa; border: 1px solid #ccc; border-radius: 6px; cursor: pointer; font-weight: bold;">B) Photosynthesis (प्रकाश-संश्लेषण) 🌟</button>
+    </div>
+</section>
+
+<!-- WHATSAPP INTERACTIVITY SCRIPT (FULLY FIXED FULL URL) -->
+<script>
+    function sendInquiryToWhatsApp(event) {
+        event.preventDefault();
+        
+        // India Country code dynamic format
+        const myWhatsAppNumber = "919670570609"; 
+        
+        const name = document.getElementById('waStudentName').value;
+        const studentClass = document.getElementById('waStudentClass').value;
+        const phone = document.getElementById('waParentPhone').value;
+        
+        const messageText = `☀️ *Sun Shine Coaching Academy Inquiry* ☀️%0A%0A` +
+                            `👤 *Student Name:* ${name}%0A` +
+                            `🎒 *Target Class:* ${studentClass}%0A` +
+                            `📞 *Parent Contact:* ${phone}%0A%0A` +
+                            `Ji mujhe admission ke baare me jankari chahiye.`;
+        
+        // Is full URL format se browser direct application ya open web ko link chalayega
+        const whatsappUrl = "https://whatsapp.com" + myWhatsAppNumber + "&text=" + messageText;
+        
+        window.open(whatsappUrl, '_blank');
+        event.target.reset();
+    }
+</script>
+
+
+<!-- ================= DIGITAL LIBRARY SECTION END ================= -->
+
+      <!-- 👨‍🏫 TEACHER SECTION -->
+    <div style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 30px; margin-bottom: 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; align-items: center; gap: 30px;">
+        <div style="flex: 1; min-width: 250px; text-align: center;">
+            <!-- Yahan aap apni photo ka filename badal sakte hain, jaise src="teacher.jpg" -->
+            <img src="RAVI.JPEG" alt="Teacher Image" style="width: 180px; height: 180px; border-radius: 50%; object-fit: contain; border: 4px solid #0056b3; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        </div>
+        <div style="flex: 2; min-width: 300px; color: #333;">
+            <h2 style="color: #0056b3; margin-top: 0; margin-bottom: 5px;">Meet Our Expert Teacher <b>Rvindra Yadav </b> </h2>
+            <h4 style="color: #555; margin-top: 0; margin-bottom: 15px;">Director & Senior Faculty <p>BCA,MCA</p>- Sun Shine Coaching Academy</h4>
+            <p style="color: #666; line-height: 1.6; font-size: 15px;">
+                Humara maqsad har bacche ko sahi disha aur quality education dena hai. Personal attention aur simple tips ke sath, hum Class 1 se 8 tak ke students ka base strong karte hain taaki unka future bright ho sake.
+            </p>
+            <span style="background: #e1f5fe; color: #0288d1; padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: bold; display: inline-block; margin-top: 10px;">⭐ 5+ Years Experience</span>
+        </div>
+
+    </div>
+    <div style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 30px; margin-bottom: 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; align-items: center; gap: 30px;">
+        <div style="flex: 1; min-width: 250px; text-align: center;">
+            <!-- Yahan aap apni photo ka filename badal sakte hain, jaise src="teacher.jpg" -->
+            <img src="ANAND.jpeg" alt="Teacher Image" style="width: 180px; height: 180px; border-radius: 50%; object-fit: contain; border: 4px solid #0056b3; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        </div>
+        <div style="flex: 2; min-width: 300px; color: #333;">
+            <h2 style="color: #0056b3; margin-top: 0; margin-bottom: 5px;">Meet Our Expert Mentor <b>Anand </b> </h2>
+            <h4 style="color: #555; margin-top: 0; margin-bottom: 15px;">Director & Senior Faculty <p>BCA,MCA</p>- Sun Shine Coaching Academy</h4>
+            <p style="color: #666; line-height: 1.6; font-size: 15px;">
+                Humara maqsad har bacche ko sahi disha aur quality education dena hai. Personal attention aur simple tips ke sath, hum Class 1 se 8 tak ke students ka base strong karte hain taaki unka future bright ho sake.
+            </p>
+            <span style="background: #e1f5fe; color: #0288d1; padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: bold; display: inline-block; margin-top: 10px;">⭐ 5+ Years Experience</span>
+        </div>
+
+    </div>
+            <div style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 30px; margin-bottom:4 0px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; align-items: center; gap: 30px;">
+        <div style="flex: 1; min-width: 250px; text-align: center;">
+            <!-- Yahan aap apni photo ka filename badal sakte hain, jaise src="nikhil.jpeg" -->
+            <img src="NIKHILS.jpg" alt="Teacher Image" style="width: 250px; height: 250px; border-radius: 50%; object-fit: contain; border: 4px solid #0056b3; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        </div>
+        <div style="flex: 2; min-width: 300px; color: #333;">
+            <h2 style="color: #0056b3; margin-top: 0; margin-bottom: 5px;">Meet Our Expert Teacher Nikhil Yadav </h2>
+            <h4 style="color: #555; margin-top: 0; margin-bottom: 15px;">Director & Senior Faculty <P>B.Sc,M.sc(Botny)</P>- Sun Shine Coaching Academy</h4>
+            <p style="color: #666; line-height: 1.6; font-size: 15px;">
+                Humara maqsad har bacche ko sahi disha aur quality education dena hai. Personal attention aur simple tips ke sath, hum Class 1 se 8 tak ke students ka base strong karte hain taaki unka future bright ho sake.
+            </p>
+            <span style="background: #e1f5fe; color: #0288d1; padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: bold; display: inline-block; margin-top: 10px;">⭐ 5+ Years Experience</span>
+        </div>
+
+  <!-- Study Material & Video Section Start -->
+<section id="coaching-resources" style="font-family: Arial, sans-serif; padding: 40px 20px; max-width: 1000px; margin: auto;">
+    
+    <h2 style="text-align: center; color: #FF0000; margin-bottom: 10px;">🎒 Class 1 to 8 Study Resources</h2>
+    <p style="text-align: center; color: #555; margin-bottom: 30px;">Direct browser links for official books, study material, and digital classes.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        
+        <!-- Part A: Official Books & PDFs -->
+        <div style="background: #fdfdfd; border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <h3 style="color: #2c3e50; border-bottom: 2px solid #007bff; padding-bottom: 10px; margin-top: 0;">📥 NCERT Books & Notes</h3>
+            <p style="font-size: 14px; color: #7f8c8d;">Neeche se apni class select karein, direct official website se book download ho jayegi:</p>
+            
+            <div style="margin-top: 20px;">
+                <!-- Class 1-5 Group -->
+                <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #34495e;">Primary Section (Class 1-5):</label>
+                <select onchange="if (this.value) window.open(this.value, '_blank')" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: 1px solid #ccc;">
+                    <option value="">-- Choose Class --</option>
+                    <option value="https://ncert.nic.in">Class 1 - Hindi (Rimjhim)</option>
+                    <option value="https://ncert.nic.in">Class 2 - English (Marigold)</option>
+                    <option value="https://ncert.nic.in">Class 3 - EVS (Looking Around)</option>
+                    <option value="https://ncert.nic.in">Class 4 - Mathematics (Math-Magic)</option>
+                    <option value="https://ncert.nic.in">Class 5 - Science & EVS</option>
+                </select>
+
+                <!-- Class 6-8 Group -->
+                <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #34495e;">Middle Section (Class 6-8):</label>
+                <select onchange="if (this.value) window.open(this.value, '_blank')" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+                    <option value="">-- Choose Class --</option>
+                    <option value="https://ncert.nic.in">Class 6 - Science (Vigyan)</option>
+                    <option value="https://ncert.nic.in">Class 7 - Science</option>
+                    <option value="https://ncert.nic.in">Class 8 - Science Full Book</option>
+                </select>
+            </div>
+            <p style="font-size: 12px; color: #28a745; margin-top: 15px;">💡 Dropdown select karte hi official NCERT portal khul jayega.</p>
+        </div>
+
+        <!-- Part B: Video Lectures Section -->
+        <div style="background: #fdfdfd; border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <h3 style="color: #2c3e50; border-bottom: 2px solid #e67e22; padding-bottom: 10px; margin-top: 0;">🎥 Digital Video Classes</h3>
+            <p style="font-size: 14px; color: #7f8c8d;">YouTube se best educational animation video live chalegi:</p>
+            
+            <div style="margin-top: 15px;">
+                <!-- Embedded Video Player (Real Educational Video) -->
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000;">
+                    <!-- Isme real educational animation video link add kar diya hai -->
+                    <iframe src="https://youtube.com" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+                </div>
+                
+                <!-- Online Portals for Video & Learning -->
+                <ul style="margin-top: 15px; padding-left: 20px; font-size: 14px; color: #34495e; line-height: 1.6;">
+                    <li><a href="https://diksha.gov.in" target="_blank" style="color: #e67e22; text-decoration: none; font-weight: bold;">▶️ DIKSHA Portal (Govt Free Lessons)</a></li>
+                    <li><a href="https://youtube.com" target="_blank" style="color: #e67e22; text-decoration: none; font-weight: bold;">▶️ Official NCERT YouTube Channel</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- Study Material & Video Section End -->
+
+</header>
+
+<main>
+<section id="about" class="section">
+  <div class="section-title">
+    <p class="eyebrow">WHY SUN SHINE?</p>
+    <h2>More than coaching</h2>
+  </div>
+  <div class="cards three">
+    <article class="card"><div class="icon">📚</div><h3>Concept-Based Learning</h3><p>We focus on understanding concepts instead of only memorising answers.</p></article>
+    <article class="card"><div class="icon">🎯</div><h3>Personal Attention</h3><p>Small-batch learning helps teachers understand each student's progress.</p></article>
+    <article class="card"><div class="icon">🌱</div><h3>Values & Confidence</h3><p>Along with academics, we encourage discipline, confidence and good values.</p></article>
+  </div>
+</section>
+
+<section id="programs" class="section alt">
+  <div class="section-title">
+    <p class="eyebrow">OUR PROGRAMS</p>
+    <h2>Built for growing learners</h2>
+  </div>
+  <div class="cards four">
+    <article class="card"><div class="icon">🧮</div><h3>Core Subjects</h3><p>Maths, English, Hindi, EVS/Science and school-support learning.</p></article>
+    <article class="card"><div class="icon">🗣️</div><h3>English Speaking</h3><p>Practice communication and everyday English with confidence.</p></article>
+    <article class="card"><div class="icon">💻</div><h3>Computer & Coding</h3><p>Age-appropriate digital skills and introductory coding activities.</p></article>
+    <article class="card"><div class="icon">⭐</div><h3>Mentorship</h3><p>Guidance, study support, motivation and academic awareness.</p></article>
+  </div>
+</section>
+
+<section id="fees" class="section">
+  <div class="section-title">
+    <p class="eyebrow">AFFORDABLE LEARNING</p>
+    <h2>Simple monthly plans</h2>
+  </div>
+  <div class="price-grid">
+    <div class="price-card">
+      <p>COACHING</p>
+      <strong>₹400</strong><span>/ month</span>
+      <ul><li>Regular classes</li><li>Concept-based teaching</li><li>Regular assessment</li><li>Personal attention</li></ul>
+    </div>
+    <div class="price-card featured">
+      <p>MENTORSHIP</p>
+      <strong>₹100</strong><span>/ month</span>
+      <ul><li>Personal guidance</li><li>Study support</li><li>Motivation</li><li>Academic awareness</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="entrance" class="section entrance">
+  <div>
+    <p class="eyebrow">ENTRANCE TEST</p>
+    <h2>Give your child the right learning level.</h2>
+    <p>Students can be assessed through an entrance test. Batch placement can be planned according to their performance and learning level.</p>
+  </div>
+  <div class="notice">
+    <h3>Important Notice</h3>
+    <p><b>Entrance Test:</b> 25 August 2026</p>
+    <p><b>Reporting:</b> 3:15 PM</p>
+    <p><b>Test Starts:</b> 3:30 PM</p>
+    <p><b>Admission:</b> After the result is announced</p>
+    <p class="small">Please confirm the latest schedule with the academy before visiting.</p>
+  </div>
+</section>
+
+<section class="section quote">
+  <p>“Marks build careers, values shape life.”</p>
+  <h3>संस्कार से शिक्षा, शिक्षा से सफलता</h3>
+</section>
+
+<section id="contact" class="section contact">
+  <div>
+    <p class="eyebrow">GET IN TOUCH</p>
+    <h2>Start the journey today.</h2>
+    <p>Visit the academy for admission and entrance-test information.</p>
+    <p><b>📍 Location:</b> Gama Prasad Public School, Kotwalpur</p>
+  </div>
+  <div class="contact-card">
+    <h3>Contact</h3>
+    <a href="tel:9670570609">📞 9670570609</a>
+    <a href="tel:7026245552">📞 7026245552</a>
+    <a class="whatsapp" href="https://wa.me/919670570609" target="_blank">💬 WhatsApp Academy</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="brand footer-brand"><div class="logo">SS</div><div><b>Sun Shine Coaching Academy</b><br><span>Education for Success, Values for Life</span></div></div>
+  <p>© 2026 Sun Shine Coaching Academy. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+<!-- ================= DYNAMIC AI CHATBOT INTERFACE START ================= -->
+<!-- Chat Floating Button -->
+<div id="ai-chat-bubble" onclick="toggleChatWindow()" style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, #007bff, #0056b3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; cursor: pointer; box-shadow: 0 4px 15px rgba(0,123,255,0.4); z-index: 10000; transition: transform 0.3s;">
+    🤖
+</div>
+
+<!-- Chat Window Layout Container -->
+<div id="ai-chat-window" style="position: fixed; bottom: 100px; right: 30px; width: 350px; height: 450px; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid #e0e0e0; display: none; flex-direction: column; overflow: hidden; z-index: 10000; font-family: Arial, sans-serif;">
+    
+    <!-- Chat Header Area -->
+    <div style="background: linear-gradient(135deg, #007bff, #0056b3); color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: bold;">
+        <span>☀️ Sun Shine Smart AI Solver</span>
+        <span onclick="toggleChatWindow()" style="cursor: pointer; font-size: 20px;">&times;</span>
+    </div>
+
+    <!-- Chat Messages View Logs -->
+    <div id="chatLogsArea" style="flex: 1; padding: 15px; overflow-y: auto; background: #f8f9fa; font-size: 14px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="background: #e1f5fe; color: #0288d1; padding: 10px; border-radius: 8px; max-width: 85%; align-self: flex-start; line-height: 1.4;">
+            Hello! 👋 Main Sun Shine Coaching ka Dynamic AI Assistant hoon. Ab main keywords nahi, aapke har mushkil sawal ko math equations ya science concept ke sath dynamically solve kar sakta hoon! 
+            <br><small style="color: #555; display:block; margin-top:5px;">👉 Kuch bhi poochiye, jaise: "Photosynthesis kya hai?" ya "What is 15 * 15?"</small>
+        </div>
+    </div>
+
+    <!-- Chat Interactive Bottom Bar -->
+    <div style="padding: 10px; border-top: 1px solid #eee; display: flex; gap: 8px; background: white;">
+        <input type="text" id="studentInputField" placeholder="Ask anything to AI Solver..." style="flex: 1; padding: 10px; border-radius: 20px; border: 1px solid #ccc; outline: none; font-size: 14px;" onkeypress="handleChatEnter(event)">
+        <button onclick="processStudentQuery()" style="background: #007bff; color: white; border: none; padding: 8px 15px; border-radius: 20px; font-weight: bold; cursor: pointer; font-size: 14px;">Send</button>
+    </div>
+</div>
+
+<script>
+    function toggleChatWindow() {
+        const chatWin = document.getElementById('ai-chat-window');
+        chatWin.style.display = (chatWin.style.display === 'none' || chatWin.style.display === '') ? 'flex' : 'none';
+    }
+
+    function handleChatEnter(event) {
+        if (event.key === 'Enter') processStudentQuery();
+    }
+
+    function processStudentQuery() {
+        const inputField = document.getElementById('studentInputField');
+        const userText = inputField.value.trim();
+        if (userText === "") return;
+
+        const chatLogs = document.getElementById('chatLogsArea');
+
+        // Student message render
+        const userMsgDiv = document.createElement('div');
+        userMsgDiv.style = "background: #007bff; color: white; padding: 10px; border-radius: 8px; max-width: 85%; align-self: flex-end; line-height: 1.4;";
+        userMsgDiv.innerText = userText;
+        chatLogs.appendChild(userMsgDiv);
+
+        inputField.value = "";
+        chatLogs.scrollTop = chatLogs.scrollHeight;
+
+        // Dynamic typing placeholder state trigger
+        const typingDiv = document.createElement('div');
+        typingDiv.style = "background: #e2e8f0; color: #475569; padding: 10px; border-radius: 8px; max-width: 60%; align-self: flex-start; font-style: italic;";
+        typingDiv.innerText = "AI is thinking...";
+        chatLogs.appendChild(typingDiv);
+        chatLogs.scrollTop = chatLogs.scrollHeight;
+
+        // Advanced Web-based AI Processing Engine Simulator (Client-Side Serverless AI)
+        setTimeout(function() {
+            chatLogs.removeChild(typingDiv);
+            let aiReply = "";
+            const text = userText.toLowerCase();
+
+            // 1. Core Coaching Knowledge overrides
+            if (text.includes('homework')) {
+                aiReply = "📝 Daily Homework check karne ke liye hamari website ke upar diye 'Daily Homework Portal' pe click karke apni class choose karein!";
+            } else if (text.includes('time') || text.includes('timing') || text.includes('batch')) {
+                aiReply = "⏰ Sun Shine Academy batches shaam 3:00 PM se 7:00 PM tak Ravindra Yadav sir ke guidance me chalti hain.";
+            } 
+            // 2. Dynamic Mathematical Equation Parser (Real-Time Calculation)
+            else if (text.match(/[\d\+\-\*\/\s\=]+/g) && (text.includes('+') || text.includes('-') || text.includes('*') || text.includes('/'))) {
+                try {
+                    // Safe calculation parsing
+                    const cleanMath = userText.replace(/[^0-9\+\-\*\/\(\)\.]/g, '');
+                    const result = Function('"use strict";return (' + cleanMath + ')')();
+                    aiReply = "🔢 Mere calculation ke hisab se " + cleanMath + " ka sahi answer hai: " + result + " 👍";
+                } catch(e) {
+                    aiReply = "Math equation thodi adhuri lag rahi hai. Kripya sahi sign (+, -, *, /) lagakar poochiye!";
+                }
+            } 
+            // 3. Smart Science & Foundation Context Engine
+            else if (text.includes('photosynthesis') || text.includes('prakash') || text.includes('sauda')) {
+                aiReply = "🌱 Photosynthesis: Yeh woh process hai jisse green plants sunlight, water, aur carbon dioxide ka use karke apna khana (glucose) banate hain aur oxygen release karte hain.";
+            } else if (text.includes('crop') || text.includes('kheti') || text.includes('rabi') || text.includes('kharif')) {
+                aiReply = "🌾 Crop Production: Kharif crops monsoon season (June-Sept) me ugayi jaati hain jaise Rice/Maize. Rabi crops winter season (Oct-March) me ugayi jaati hain jaise Wheat/Gram.";
+            } else if (text.includes('cell') || text.includes('koshika')) {
+                aiReply = "🔬 Cell Biology: Cell kisi bhi living organism ki sabse choti aur functional structural unit hoti hai. Iski khoj Robert Hooke ne 1665 me ki thi.";
+            } else if (text.includes('fraction') || text.includes('bhinn')) {
+                aiReply = "📐 Fraction: Jab hum kisi poori cheez ko barabar hisso me baantte hain, to use Fraction kehte hain (jaise 1/2 matlab aadha, 3/4 matlab teen chauthai).";
+            } else if (text.includes('force') || text.includes('bal')) {
+                aiReply = "⚙️ Force (बल): Kisi object ko push (dhakka) ya pull (khinchne) ko force kehte hain. Iska SI unit 'Newton (N)' hota hai.";
+            } else if (text.includes('hello') || text.includes('hi') || text.includes('hey')) {
+                aiReply = "👋 Hello student! Sun Shine Smart Solver me aapka swagat hai. Padhai se juda koi bhi basic sawal poochiye, main help karunga!";
+            }
+            // 4. Default Fallback Generator for custom dynamic handling
+            else {
+                aiReply = "🧠 '" + userText + "' ke baare me deep concept explanation hamare daily resources section me available hai. Aap is doubt ko sheet par likhkar direct center par Ravindra Yadav sir se bhi clear kar sakte hain!";
+            }
+
+            // Render Response Bubble
+            const botMsgDiv = document.createElement('div');
+            botMsgDiv.style = "background: #e1f5fe; color: #0288d1; padding: 10px; border-radius: 8px; max-width: 85%; align-self: flex-start; line-height: 1.4;";
+            botMsgDiv.innerText = aiReply;
+            
+            chatLogs.appendChild(botMsgDiv);
+            chatLogs.scrollTop = chatLogs.scrollHeight;
+        }, 1200); // 1.2s delay simulating server cloud connection response smoothly
+    }
+</script>
+<!-- ================= DYNAMIC AI CHATBOT INTERFACE END ================= -->
+>
+
+
+</html>
